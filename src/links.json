@@ -2,7 +2,7 @@
   "_help": "Edit this file to change the hub on the front page. A channel with an empty url is hidden. icon: yt, tt, ig, fb, in, x, link.",
   "intro": {
     "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1671008911780-ARGYP729CEI6H0DXEQTB/bendavid_2214-Edit_1600px.jpg",
-    "text": "Physicist, teacher and presenter at NTNU Ålesund. Cosmology, mathematics and physics, on stage, on screen and in the classroom."
+    "text": "Physicist, teacher, speaker and conference host. Cosmology, mathematics and physics, on stage, on screen and in the classroom at NTNU Ålesund."
   },
   "channels": [
     {
@@ -82,6 +82,16 @@
       "text": "Recorded talks and shows, and how to book me.",
       "href": "/video",
       "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621183780599-AOVKF4ONR1BGAMGNE3RE/meTedx2Reduced.png"
+    }
+  ],
+  "booking": [
+    {
+      "title": "Talks",
+      "text": "Engaging talks on science, cosmology, mathematics, physics and education, for businesses, conferences, schools and pub audiences. In Norwegian or English."
+    },
+    {
+      "title": "Conference host / MC",
+      "text": "Frequently used as host and MC for conferences, award shows and outreach events. Keeps the programme on time and the audience awake."
     }
   ]
 }

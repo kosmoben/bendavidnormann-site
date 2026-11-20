@@ -111,11 +111,18 @@ def render_home(p):
             f'<p class="status">{esc(pr.get("status"))}</p>'
             f'<h3><a {link_attrs(pr["href"])}>{esc(pr["title"])}</a></h3>'
             f'<p>{esc(pr.get("text"))}</p>{extra_html}</div></article>')
+    booking = ""
+    if LINKS.get("booking"):
+        cards = "".join(f'<div class="book-card"><h3>{esc(b["title"])}</h3><p>{esc(b["text"])}</p></div>'
+                        for b in LINKS["booking"])
+        booking = (f'<section><h2>Book me</h2><div class="booking">{cards}</div>'
+                   '<p class="btn-row"><a class="btn" href="/book-ben">Book Ben!</a></p></section>')
     return f"""<section class="hero">
   <img src="{img(intro["img"])}" alt="Ben David Normann">
   <div><h1>Ben David Normann</h1><p>{esc(intro["text"])}</p>
   <p><a class="btn" href="/book-ben">Book Ben!</a> <a class="btn ghost" href="/about">About me</a></p></div>
 </section>
+{booking}
 <section><h2>Follow</h2><div class="chans">{chans}</div></section>
 <section><h2>Projects</h2><div class="projects">{"".join(projects)}</div></section>"""
 
