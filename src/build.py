@@ -119,7 +119,7 @@ def render_home(p):
                    '<p class="btn-row"><a class="btn" href="/book-ben">Book Ben!</a></p></section>')
     return f"""<section class="hero">
   <img src="{img(intro["img"])}" alt="Ben David Normann">
-  <div><h1>Ben David Normann</h1><p>{esc(intro["text"])}</p>
+  <div><h1 class="signature"><img src="/brand/signature-neon.svg" alt="Ben David Normann" width="1000" height="840"></h1><p>{esc(intro["text"])}</p>
   <p><a class="btn" href="/book-ben">Book Ben!</a> <a class="btn ghost" href="/about">About me</a></p></div>
 </section>
 {booking}
@@ -127,13 +127,15 @@ def render_home(p):
 <section><h2>Projects</h2><div class="projects">{"".join(projects)}</div></section>"""
 
 
-def page(path, p):
+def page(path, p, theme=None):
     title = SITE if path == "/" else f'{p["title"]} — {SITE}'
     nav = "".join(
         f'<a {link_attrs(h)}' + (' aria-current="page"' if h == path else "") + f'>{esc(t)}</a>' for t, h in NAV)
     social = "".join(
         f'<a href="{h}" target="_blank" rel="noopener" aria-label="{t}">{ICONS[k]}</a>' for t, h, k in SOCIAL)
     body = render_home(p) if p.get("kind") == "home" else "".join(render_block(b) for b in p["blocks"])
+    theme_css = (f'\n<link rel="stylesheet" href="/themes/{theme}.css"><meta name="robots" content="noindex">'
+                 if theme else "")
     back = f'<p class="back"><a href="{esc(p["back"])}">← Back</a></p>' if p.get("back") else ""
     return f"""<!doctype html>
 <html lang="en">
@@ -143,19 +145,25 @@ def page(path, p):
 <title>{esc(title)}</title>
 <meta name="description" content="Ben David Normann: presenter, academic, teacher and author. Cosmology, physics and mathematics at NTNU Ålesund.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png">
+<meta name="theme-color" content="#050505">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:image" content="/brand/share.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css">{theme_css}
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="/">{SITE}</a>
+  <a class="brand" href="/" aria-label="{SITE}, front page"><img src="/brand/signature-neon.svg" alt="{SITE}" width="74" height="62"></a>
   <input type="checkbox" id="menu" hidden><label for="menu" class="burger" aria-label="Menu">☰</label>
   <nav>{nav}<span class="social">{social}</span><a class="btn" href="/book-ben">Book Ben!</a></nav>
 </header>
 <main>{back}{body}</main>
 <footer class="site-footer">
-  <a class="brand" href="/">{SITE}</a>
+  <a class="stamp" href="/" aria-label="{SITE}"><img src="/brand/stamp.svg" alt="" width="96" height="96" loading="lazy"></a>
+  <span class="copy">© Ben David Normann</span>
   <span class="social">{social}</span>
   <a {link_attrs("@CONTACT@")}>Contact</a>
 </footer>
@@ -181,11 +189,19 @@ def main():
     for path, p in content.items():
         out = os.path.join(DIST, path.strip("/"), "index.html") if path != "/" else os.path.join(DIST, "index.html")
         write(out, page(path, p))
+    # Design proposals: the front page with an alternative theme stylesheet.
+    themes_dir = os.path.join(HERE, "themes")
+    if os.path.isdir(themes_dir):
+        shutil.copytree(themes_dir, os.path.join(DIST, "themes"), dirs_exist_ok=True)
+        for f in sorted(os.listdir(themes_dir)):
+            name = os.path.splitext(f)[0]
+            write(os.path.join(DIST, f"design-{name}", "index.html"), page("/", content["/"], theme=name))
     write(os.path.join(DIST, "404.html"), page("/404", {"title": "Not found", "blocks": [
         {"html": "<h1>Page not found</h1><p>Sorry, that page does not exist.</p>"},
         {"button": "Go to the front page", "href": "/"}]}))
     for f in ("style.css", "favicon.svg", "_redirects", "_headers"):
         shutil.copy(os.path.join(HERE, f), os.path.join(DIST, f))
+    shutil.copytree(os.path.join(HERE, "brand"), os.path.join(DIST, "brand"), dirs_exist_ok=True)
     with open(os.path.join(ROOT, "images.json"), "w") as f:
         json.dump(images, f, indent=1)
     print(f"Built {len(content)} pages, {len(images)} images referenced.")

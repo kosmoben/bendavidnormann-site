@@ -1,9 +1,10 @@
 :root {
-  --bg: #f6f5ea;
-  --ink: #111;
-  --muted: #6b6a5c;
-  --accent: #585419;
-  --line: #d9d7c4;
+  --bg: #050505;
+  --ink: #ecebe4;
+  --muted: #9a998f;
+  --accent: #9dff7a;
+  --line: #262626;
+  --glow: 0 0 6px rgba(157, 255, 122, .55), 0 0 18px rgba(157, 255, 122, .25);
   --hand: "Architects Daughter", "Comic Sans MS", cursive;
   --mono: "Lucida Console", Monaco, ui-monospace, monospace;
 }
@@ -17,7 +18,8 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
   max-width: 1200px; margin: 0 auto; padding: 24px 4vw;
 }
-.brand { font: 26px var(--hand); color: var(--ink); text-decoration: none; margin-right: auto; }
+.brand { margin-right: auto; display: inline-flex; }
+.brand img { height: 84px; width: auto; margin: -12px 0; }
 .site-header nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
 .site-header nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
 .site-header nav a[aria-current] { text-decoration: underline; text-underline-offset: 6px; }
@@ -82,7 +84,7 @@ figure.tile { margin: 0; }
 /* Hub front page */
 main:has(.hero) { max-width: 1100px; }
 .hero { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: center; margin: 16px 0 48px; }
-.hero img { width: 280px; aspect-ratio: 1; object-fit: cover; border-radius: 50%; background: var(--line); }
+.hero > img { width: 280px; aspect-ratio: 1; object-fit: cover; border-radius: 50%; background: var(--line); }
 .hero h1 { margin: 0 0 12px; }
 .hero p { max-width: 560px; }
 .btn.ghost { border-color: var(--ink); color: var(--ink) !important; }
@@ -108,7 +110,7 @@ section h2 { border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-t
 .more { font-size: 14px; }
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 20px; text-align: center; }
-  .hero img { width: 180px; margin: 0 auto; }
+  .hero > img { width: 180px; margin: 0 auto; }
   .hero p { margin-left: auto; margin-right: auto; }
   .project { grid-template-columns: 1fr; gap: 12px; }
 }
@@ -116,3 +118,29 @@ section h2 { border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-t
 .book-card { border: 2px solid var(--accent); padding: 20px 24px; }
 .book-card h3 { margin: 0 0 8px; }
 .book-card p { margin: 0; }
+
+/* Brand: neon signature on near-black */
+.btn { border-color: var(--accent); }
+.btn:hover { box-shadow: var(--glow); }
+.site-header nav a[aria-current] { color: var(--accent); }
+h1, h2, h3, h4 { color: var(--ink); }
+.status { text-shadow: var(--glow); }
+.hero > img { border: 3px solid var(--accent); box-shadow: var(--glow); }
+.hero h1.signature { margin: 0 0 8px; }
+.hero h1.signature img { border: 0; box-shadow: none; border-radius: 0; width: min(440px, 100%); height: auto; aspect-ratio: auto; object-fit: contain; background: none; margin-left: -20px; }
+.chan { border-color: var(--line); background: #0d0d0d; }
+.chan svg { color: var(--accent); }
+.chan:hover { color: var(--bg); }
+.chan:hover svg { color: var(--bg); }
+.book-card { background: #0d0d0d; }
+.project .cover img, .tile img, .home-tile img { border: 1px solid var(--line); }
+.site-footer { align-items: center; }
+.site-footer .stamp img { width: 96px; height: 96px; }
+.site-footer .copy { margin-right: auto; color: var(--muted); font-size: 13px; }
+::selection { background: var(--accent); color: var(--bg); }
+@media (max-width: 760px) {
+  .brand img { height: 48px; }
+  .hero h1.signature img { margin: 0 auto; width: min(320px, 100%); }
+  .hero > img { width: 180px; }
+}
+.hero h1.signature img { width: min(400px, 100%); margin: -30px 0 -20px -24px; }

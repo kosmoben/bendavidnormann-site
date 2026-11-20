@@ -1,0 +1,31 @@
+/* Design C: Light and clean. White page, black hero band with the neon signature, neon used sparingly. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+:root {
+  --bg: #fafaf7; --ink: #111; --muted: #66665f; --accent: #2f7d17; --line: #e3e3dc;
+  --mono: "Inter", system-ui, sans-serif; --hand: "Inter", system-ui, sans-serif;
+}
+body { font-size: 16px; }
+h1, h2, h3, h4 { font-weight: 600; letter-spacing: -.01em; }
+.site-header { background: #050505; max-width: none; padding-left: max(4vw, calc((100vw - 1100px) / 2)); padding-right: max(4vw, calc((100vw - 1100px) / 2)); }
+.site-header nav a, .social a { color: #ecebe4; }
+.site-header nav a[aria-current] { color: #9dff7a; }
+.site-header .btn { border-color: #9dff7a; color: #9dff7a !important; }
+main:has(.hero) { max-width: none; padding: 0 0 64px; }
+main:has(.hero) > section { max-width: 1000px; margin-left: auto; margin-right: auto; padding: 0 4vw; }
+.hero {
+  max-width: none !important; margin: 0 0 32px; padding: 32px max(4vw, calc((100vw - 1000px) / 2)) 56px !important;
+  background: #050505; color: #ecebe4;
+}
+.hero > img { border: 3px solid #9dff7a; box-shadow: 0 0 18px rgba(157,255,122,.35); }
+.hero .btn { border-color: #9dff7a; color: #9dff7a !important; }
+.hero .btn.ghost { border-color: #ecebe4; color: #ecebe4 !important; }
+.btn { border-radius: 999px; padding: 10px 20px; }
+.btn:hover { background: #050505; color: #9dff7a !important; box-shadow: none; }
+.chan, .book-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.chan svg { color: var(--ink); }
+.chan:hover { background: #050505; border-color: #050505; color: #9dff7a; }
+.chan:hover svg, .chan:hover small { color: #9dff7a; }
+.status { text-shadow: none; }
+.project .cover img { border-radius: 12px; border: 0; }
+.site-footer { background: #050505; color: #ecebe4; max-width: none; padding-left: max(4vw, calc((100vw - 1100px) / 2)); padding-right: max(4vw, calc((100vw - 1100px) / 2)); }
+.site-footer a { color: #ecebe4; }
