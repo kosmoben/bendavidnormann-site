@@ -100,31 +100,38 @@ def render_home(p):
     intro = LINKS["intro"]
     chans = "".join(
         f'<a class="chan" {link_attrs(c["url"])}>{ICONS.get(c.get("icon"), ICONS["link"])}'
-        f'<b>{esc(c["name"])}</b><small>{esc(c.get("handle"))}</small></a>' for c in CHANNELS)
+        f'<span><b>{esc(c["name"])}</b><small>{esc(c.get("handle"))}</small></span></a>' for c in CHANNELS)
     projects = []
     for pr in LINKS["projects"]:
         pic = f'<img src="{img(pr["img"])}" alt="" loading="lazy">' if pr.get("img") else ""
         extra = pr.get("extra")
         extra_html = f'<a class="more" {link_attrs(extra["href"])}>{esc(extra["label"])} →</a>' if extra else ""
         projects.append(
-            f'<article class="project"><a class="cover" {link_attrs(pr["href"])}>{pic}</a><div>'
-            f'<p class="status">{esc(pr.get("status"))}</p>'
+            f'<article class="project"><a class="cover" {link_attrs(pr["href"])} tabindex="-1">{pic}</a>'
+            f'<div class="body"><p class="status">{esc(pr.get("status"))}</p>'
             f'<h3><a {link_attrs(pr["href"])}>{esc(pr["title"])}</a></h3>'
             f'<p>{esc(pr.get("text"))}</p>{extra_html}</div></article>')
     booking = ""
     if LINKS.get("booking"):
-        cards = "".join(f'<div class="book-card"><h3>{esc(b["title"])}</h3><p>{esc(b["text"])}</p></div>'
+        cards = "".join(f'<div class="book-card"><span class="spark" aria-hidden="true">✦</span>'
+                        f'<h3>{esc(b["title"])}</h3><p>{esc(b["text"])}</p></div>'
                         for b in LINKS["booking"])
-        booking = (f'<section><h2>Book me</h2><div class="booking">{cards}</div>'
+        booking = (f'<section class="band"><h2><span class="spark">✦</span> Book me</h2><div class="booking">{cards}</div>'
                    '<p class="btn-row"><a class="btn" href="/book-ben">Book Ben!</a></p></section>')
     return f"""<section class="hero">
-  <img src="{img(intro["img"])}" alt="Ben David Normann">
-  <div><h1 class="signature"><img src="/brand/signature-neon.svg" alt="Ben David Normann" width="1000" height="840"></h1><p>{esc(intro["text"])}</p>
-  <p><a class="btn" href="/book-ben">Book Ben!</a> <a class="btn ghost" href="/about">About me</a></p></div>
+  <h1 class="logo"><img src="/brand/logo-arc.svg" alt="Ben David Normann" width="560" height="390"></h1>
+  <p class="tagline">{esc(intro.get("tagline", "Cosmologist · Physicist · Communicator"))}</p>
+  <p class="hero-cta"><a class="btn" href="/book-ben">Book Ben!</a> <a class="btn ghost" href="#projects">Explore</a></p>
+  <a class="scroll" href="#about" aria-label="Scroll down">↓</a>
+</section>
+<section class="band about" id="about">
+  <img class="portrait" src="{img(intro["img"])}" alt="Ben David Normann" loading="lazy">
+  <div><h2><span class="spark">✦</span> Hi, I'm Ben</h2><p>{esc(intro["text"])}</p>
+  <p><a class="more" href="/about">More about me →</a></p></div>
 </section>
 {booking}
-<section><h2>Follow</h2><div class="chans">{chans}</div></section>
-<section><h2>Projects</h2><div class="projects">{"".join(projects)}</div></section>"""
+<section class="band" id="projects"><h2><span class="spark">✦</span> Projects</h2><div class="projects">{"".join(projects)}</div></section>
+<section class="band"><h2><span class="spark">✦</span> Follow</h2><div class="chans">{chans}</div></section>"""
 
 
 def page(path, p, theme=None):
@@ -155,6 +162,7 @@ def page(path, p, theme=None):
 <link rel="stylesheet" href="/style.css">{theme_css}
 </head>
 <body>
+<canvas id="sky" aria-hidden="true"></canvas>
 <header class="site-header">
   <a class="brand" href="/" aria-label="{SITE}, front page"><img src="/brand/signature-neon.svg" alt="{SITE}" width="74" height="62"></a>
   <input type="checkbox" id="menu" hidden><label for="menu" class="burger" aria-label="Menu">☰</label>
@@ -167,6 +175,7 @@ def page(path, p, theme=None):
   <span class="social">{social}</span>
   <a {link_attrs("@CONTACT@")}>Contact</a>
 </footer>
+<script src="/sky.js" defer></script>
 </body>
 </html>
 """
@@ -199,7 +208,7 @@ def main():
     write(os.path.join(DIST, "404.html"), page("/404", {"title": "Not found", "blocks": [
         {"html": "<h1>Page not found</h1><p>Sorry, that page does not exist.</p>"},
         {"button": "Go to the front page", "href": "/"}]}))
-    for f in ("style.css", "favicon.svg", "_redirects", "_headers"):
+    for f in ("style.css", "sky.js", "favicon.svg", "_redirects", "_headers"):
         shutil.copy(os.path.join(HERE, f), os.path.join(DIST, f))
     shutil.copytree(os.path.join(HERE, "brand"), os.path.join(DIST, "brand"), dirs_exist_ok=True)
     with open(os.path.join(ROOT, "images.json"), "w") as f:
