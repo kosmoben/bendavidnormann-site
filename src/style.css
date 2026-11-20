@@ -206,3 +206,6 @@ figure.wide img, .tile img, .card img, .gallery img { border-radius: 14px; borde
 }
 html { background: #050505; }
 .hero { min-height: calc(92vh - 96px); }
+/* Paint the sky on html so the fixed starfield canvas (z-index -1) sits above it. */
+html { background: radial-gradient(ellipse at 50% -10%, #0d1a10 0%, #050505 55%) fixed, #050505; }
+body { background: transparent; }
