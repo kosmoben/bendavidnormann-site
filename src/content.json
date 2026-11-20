@@ -1,0 +1,136 @@
+{
+"/": {"title": "Ben David Normann", "kind": "home", "blocks": [
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621183780599-AOVKF4ONR1BGAMGNE3RE/meTedx2Reduced.png", "cap": "The presenter", "href": "/video"},
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621182285815-7KN9N6BPNQKAWYW4DIQ9/PhDThesis_Background+Reduced.jpg", "cap": "The academic", "href": "/research"},
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621183621429-CDMA80IZGBJD152QP005/Screenshot+2021-05-16+at+18.34.19.png", "cap": "The teacher", "href": "/normann-academy"},
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1620940806557-9556OZ4V71QDE1P89E1P/unsplash-image-8XddFc6NkBY.jpg", "cap": "The author", "href": "/read"}
+]},
+"/about": {"title": "About", "blocks": [
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621184490799-YJ0OU02FYSPO2WFAJM8A/meTedx4Reduced.png", "alt": "Ben David Normann"},
+  {"html": "<h3>Who am I?</h3><p>At campus Ålesund, in the midst of spectacular mountains and roaring seas, I spend much of my days teaching mathematics and physics at the Norwegian University of Science and Technology (NTNU). Besides, I work on exciting research projects and engage in dissemination to the general publich through talks and in pen. So… who am I?</p><p>a curious mind.</p>"}
+]},
+"/book-ben": {"title": "Book Ben!", "blocks": [
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621185840480-90G2IFKUHFS2HRTLXOCP/meTedx1Reduced.jpg", "alt": "Ben David Normann on stage"},
+  {"html": "<p>Please take a look at the types of things I do, to see see if it can fit any of your needs. Otherwise, I am always up for new challenges. Language: <strong>Norwegian</strong> and <strong>English</strong></p><ul><li><p>Talks (science, education, cosmology, mathematics, physics)</p></li><li><p>Shows and outreach events</p></li><li><p>Talk-show host</p></li><li><p>Conference hosting</p></li></ul><p>Previous audiences: businesses, conferences, TEDx, the ministry of education and research, universities, pub-talks, stand-up and more.</p>"},
+  {"html": "<p>Did you have something else in mind? Get in touch!</p>"},
+  {"button": "Send me an email", "href": "@CONTACT@"}
+]},
+"/video": {"title": "Video", "blocks": [
+  {"html": "<h1>The presenter</h1><p>Below you can find a few different projects that I have been part of, and which have been recorded. Enjoy!</p>"},
+  {"button": "Need a talkshow host / presenter / MC ?", "href": "/book-ben"},
+  {"grid": [
+    {"cap": "Cosmology with Ben", "href": "/video/project-four-l3zw3-wtzbe", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/8c0de4d2-ea26-41cb-b91a-9a388c26ec4b/BenEple.png"},
+    {"cap": "Nyans", "href": "/video/nyans", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/3d77d8ca-2ec6-4b93-975d-4caf4d6ea83e/Nyans1.jpeg"},
+    {"cap": "TedX Stavanger", "href": "/video/project-one-g8kzp", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621177704069-X35VOT5CZGH28VWBHSGN/meTedx2.jpg"},
+    {"cap": "Forsker GrandPrix", "href": "/video/project-two-4wwys", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621178144181-DQ5NSM6XII68IX9U8687/MariLovos_Ben+David+Normann_9Reduced.jpg"},
+    {"cap": "Stand-up talk on modern cosmology", "href": "/video/project-three-sstra", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621178768880-39UPCELGU0D82QIHKUCJ/Enthusiastic_PhotoYngveVogtReduced.jpg"}
+  ]}
+]},
+"/video/project-four-l3zw3-wtzbe": {"title": "Cosmology with Ben", "back": "/video", "blocks": [
+  {"html": "<h2>Cosmology with Ben</h2><p>Together with a team from NTNU I have created a YouTube mini-series on cosmology (Norwegian). And you know what? We won two prizes for it! It is not clear where or when it will come out, so stay tuned…! Besides… you can actually see the first episode in the link below.</p>"},
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/8acb3771-6208-447b-9cba-904f8747a00f/Image+07-05-2026+at+16.13.png", "alt": "Cosmology with Ben", "href": "https://filmfreeway.com/projects/4033265"},
+  {"html": "<h2>How it all started…</h2><p>The series started as an idea back in 2022. But it was not until the Christmas og 2024 that the first Scripts were born, and finally over the course of 2025 and 2026 the filming was done.</p><p>I was lucky enough to meet Jonas and Geir, who saw the potential and worked miracles both behind the scenes and in front of the camera. Together we set out, three brothers in crime, to create what became an award-winning mini-series about cosmology.</p>"},
+  {"button": "Project homepage!", "href": "https://filmfreeway.com/projects/4033265"},
+  {"grid": [
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/cc92768f-0c12-42d0-87ae-91aaa32cef00/sun.jpg"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/c283735a-850a-483a-b8bd-2bdadbe46cdb/TREFF.002.jpeg"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/75de897e-289e-469d-ab50-efa866c6680a/TREFF-award-winner-black-1.png"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/e2d8cdba-6a57-463e-914b-485619c3128a/Screenshot+2026-04-14+at+10.35.03.png"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/b9c036b9-8d10-451a-aca0-dc8b58e0a2dd/IMG_2769.jpeg"}
+  ]}
+]},
+"/video/nyans": {"title": "Nyans", "back": "/video", "blocks": [
+  {"html": "<h2>Nyans</h2><p>Nyans was a talkshow hosted on NTNU. A grassroots initiative, it did not last for more than one season, but we are proud of what we managed to produce based on the available means.</p>"},
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/c269ca20-bc3b-44c6-a3bf-63bca7eb8ace/Kjernekraft_Bakgrunn.png", "alt": "Nyans episode 1: Nuclear power", "href": "https://www.youtube.com/watch?v=dmTKLdsGt5E&list=PLBSPq-MdQqrvruj6uKcKaWHkfJYo8K82e"},
+  {"html": "<h2>Episode 1: Nuclear power</h2><p>Energy is tricky. In this episode we explored nuclear energy as a possible source.</p>"},
+  {"button": "Episode 1", "href": "https://www.youtube.com/watch?v=dmTKLdsGt5E&list=PLBSPq-MdQqrvruj6uKcKaWHkfJYo8K82e"},
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/c4672d5b-1a80-4262-ada2-dd7850c8b389/Kj%C3%B8nn_bakgrunn.png", "alt": "Nyans episode 4: Gender", "href": "https://www.youtube.com/watch?v=BVGFHxJ4W0k&list=PLBSPq-MdQqruePsVOiloN1on1LH684i48"},
+  {"html": "<h2>Episode 4: Gender?!</h2><p>This was the most daring of the episodes, and the one that sparked the most headlines and interest. I suppose the topic speaks for itself. Around the table this time was 4 distinguished academics; two from the “liberal wing” and two from the “conservative wing.” To our knowledge we were the first ones to have such a panel seated around the same table in a filmed conversation. If nothing else, we at least got to show that it is possible to have a civilised conversation also on topics on which we strongly disagre.</p>"},
+  {"button": "Episode 4", "href": "https://www.youtube.com/watch?v=BVGFHxJ4W0k&list=PLBSPq-MdQqruePsVOiloN1on1LH684i48"},
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/f0a20fea-46ec-4605-813c-ff79b1284bd5/MicrosoftTeams-image+%284%29.png", "alt": "Nyans"},
+  {"html": "<h2>The rest of the episodes</h2><p>Feel free to visit the project webpage at NTNU or my YouTube channel to watch the other episodes.</p>"},
+  {"button": "www.ntnu.no/nyans", "href": "https://www.ntnu.no/nyans"},
+  {"button": "@DrNormann", "href": "https://www.youtube.com/@DrNormann"}
+]},
+"/video/project-one-g8kzp": {"title": "TedX Stavanger", "back": "/video", "blocks": [
+  {"youtube": "A1O4l02koJ8"},
+  {"html": "<p>My contribution at TEDx Stavanger</p><h4>Awe</h4>"}
+]},
+"/video/project-two-4wwys": {"title": "Forsker GrandPrix", "back": "/video", "blocks": [
+  {"youtube": "H0TAvk6h-Ps"},
+  {"html": "<p>My presentation in the regional finals in Stavanger. You can watch the national finals (which I won!) <a href=\"https://tv.nrk.no/serie/kunnskapskanalen/2019/MDDP17002918/avspiller\">here</a>.</p>"}
+]},
+"/video/project-three-sstra": {"title": "Stand-up talk on modern cosmology", "back": "/video", "blocks": [
+  {"youtube": "TE3LMDBzFTg"},
+  {"html": "<p>Talking about modern problems in cosmology</p><h4>The elephant in the room</h4>"}
+]},
+"/research": {"title": "Research", "blocks": [
+  {"html": "<h1>The academic</h1>"},
+  {"grid": [
+    {"cap": "How likely is our Universe?", "href": "/research/bianchi", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1620974542189-SOX1950NPXMRZX3ZPGCJ/Distorted+background.jpg"},
+    {"cap": "What is all that dark bit?", "href": "/research/lensing", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1620974670594-TV0EYW7AMEYXD9Z471KP/guillermo-ferla-M_EgSITHrKA-unsplash.jpg"},
+    {"cap": "Gravitational lensing", "href": "/research/gravitational-lensing", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1686032168181-3MH3W6V79M13AD8KY9V3/28BC12F8-8A8B-4360-91F5-D1926863950C.jpeg"},
+    {"cap": "How sticky is the universe?", "href": "/research/viscous", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1620974837331-B3ASWGU4VOCKV27ERJ5X/bryan-goff-_itkYVtDh8w-unsplash.jpg"}
+  ]}
+]},
+"/research/bianchi": {"title": "How likely is our Universe?", "back": "/research", "blocks": [
+  {"html": "<h2>Geometric fine-tuning?</h2><p>When astronomers put their telescopes to the skies, they find that the Universe looks pretty much the same in all directions. In technical terms, it is said to be isotropic. That is odd, for the mathematics describing the Universe allows for it to be so vastly different from that! In fact, an isotropic universe is a very special universe. How did the Universe come to be so special? One strategy that might bypass the problem, is the very forceful theory of inflation. This theory solves the so-called 'horizon problem' (why does the radiation we receive in our telescopes have essentially the same temperature, independent of the direction?!) and the so-called 'flatness-problem' (why is the Universe so flat?!). Coarsely, inflation says that the Universe looks very flat and boring and ‘well-tempered’ because it was once very small, before it all of a sudden expanded extremely rapidly. So, much like the earth looks flat when you look to any direction from a tall building, the Univese will look flat when we look around with our telescopes. Adding inflation to the equations might be the right guess (then again; it might also <em>not</em> be), but it is nevertheless ad-hoc. Anything ad-hoc deserves better attention. Hence we approach the problems of modern cosmology from an altogether different route, inspired by a different, but perhaps related, question: <strong>Is the Universe we observe likely?</strong> The answer to this question heavily depends on the kind of matter content existing in the Universe. Modern cosmology is based on the so-called concordance model (LCDM). To date, we seem to have no other theory describing all the observable Universe as precisely as this model does. Paradigm established.</p><p><strong>We go the other way.</strong> By ridding the theory of the assumptions made by physical cosmology concerning isotropy, we ask instead how likely an isotropic universe is in the first place, given the theory. That is: we take the concordance model (or any other model) and situate it in the broader mathematical context of General relativity, to see how the fuller theory tosses and stretches it around. In technical terms, we study the so-called Bianchi models, which comprise the set of (simply transitive) fully anisotropic initial conditions for our Universe. What do we find?</p><p>Check out our (peer reviewed) publications on the topic:</p><ul><li><a href=\"https://arxiv.org/abs/1712.08752\">[1712.08752] Bianchi cosmologies with $p$-form gauge fields (arxiv.org)</a></li><li><a href=\"https://arxiv.org/abs/1909.11962\">[1909.11962] Approaching Wonderland (arxiv.org)</a></li><li><a href=\"https://arxiv.org/abs/1910.12083\">[1910.12083] Collins in Wonderland (arxiv.org)</a></li><li><a href=\"https://arxiv.org/abs/1911.05793\">[1911.05793] Extended FLRW Models: dynamical cancellation of cosmological anisotropies (arxiv.org)</a></li></ul><p><strong>Why this research?</strong><br>Consider for a moment the hypothetical scenario where it turns out that the Universe in which we find ourselves is found to be infinitely unlikely from a theoretical point of view. Now that would be a curious thing, wouldn’t it?</p>"}
+]},
+"/research/lensing": {"title": "What is all that dark bit?", "back": "/research", "blocks": [
+  {"html": "<h2>What is all that dark bit?</h2><p>As most of the astronomy interested and astrophysics inspired alike have heard, the Universe is expanding at a faster and faster rate. In concordance cosmology this is blamed on <em>dark energy</em>. But the so-called dark sector in the energy budget of the Universe is even richer than and entails yet another component: <em>dark matter</em>. Just as dark energy is the name put on our lack of understanding of the Universe’s late acceleration, dark matter is the name given to another mystical observation: The Universe seems to contain more matter than that which we can see.</p><p>In one of the papers listed in the previous project, we initiate a study that could be seen as a guess for a dark matter model. In it, and subsequent papers, we find solutions to Einsteins equations (with a 3-form / 1-form matter field).</p><p>Have a look:</p><ul><li><a href=\"https://arxiv.org/abs/1712.08752\">[1712.08752] Bianchi cosmologies with $p$-form gauge fields (arxiv.org)</a></li></ul><p><strong>Why this study? </strong>As already mentioned in the previous project, the matter content of the Universe matters (what a pun) a lot in understanding the symmetry properties of the spatial parts of cosmos. That is why also we engage in the study of these exotic, dark components.</p>"}
+]},
+"/research/gravitational-lensing": {"title": "Gravitational lensing", "back": "/research", "blocks": [
+  {"html": "<h2>Gravitational lensing</h2><p>Gravity is a peculiar phenomena. Gravity is weak, but on large scale it is a wonder-working winner. It distorts and twists anything with energy. Light carries energy, so light is also distorted by gravity’s relentless rule. Much like your glasses (or your friend’s, if you don’t have any yourself!) distort the path of light due to the different refractive indexes of glass and air, so the gravitational field of a galaxy or a cluster of galaxies — or even just a star — distorts the path of light. This is called <strong>gravitational lensing.</strong></p><p>In a series of papers, Dr. Chris Clarkson has devised a formalism for looking at both weak and strong gravitational lensing under one scope; the <strong>Roulette formalism:</strong></p><ul><li><a href=\"https://arxiv.org/abs/1603.04698\">[1603.04698] Roulettes: A weak lensing formalism for strong lensing - I. Overview (arxiv.org)</a></li><li><a href=\"https://arxiv.org/abs/1603.04652\">[1603.04652] Roulettes: A weak lensing formalism for strong lensing - II. Derivation and analysis (arxiv.org)</a></li><li><a href=\"https://arxiv.org/abs/1904.04471\">[1904.04471] Recursion relations for gravitational lensing (arxiv.org)</a></li></ul><p>Slowly, but steadily, we are working on implementing this with Machine Learning to see if the whispers of the night sky makes ever so slightly more sense when perceived through gravitational glasses.</p><p>Take a look:</p><ul><li><a href=\"https://github.com/CosmoAI-AES\">GitHub repository</a></li><li><a href=\"https://arxiv.org/abs/2303.11824\">[2303.11824] On the simulation of the Roulette formalism</a></li><li>[Bachelor thesis]: <a href=\"https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/3003634\">A study of gravitational lensing through simulation and machine learning</a></li><li>[Bachelor thesis]: Intergalactic machine Vision (to appear)</li></ul><p>The group consists of two far-fetched physicists (<a href=\"https://www.ntnu.edu/employees/kenny.solevag-hoti\">Kenny Solevåg Hoti</a> &amp; <a href=\"https://ntnu.edu/employees/ben.d.normann\">Ben David Normann</a>) and one guru of computing (<a href=\"https://www.ntnu.edu/employees/hasc\">Hans Georg Schaatun</a>), alongside undergraduate and graduate students.</p><p><strong>Looking for a thesis project? </strong>If you intend to write your Master’s or bachelor’s thesis on gravitational lensing, you may find the following list interesting.</p><ul><li><em>A comparison between the Roulette formalism and standard approaches</em>: The Roulette formalism is a weak-lensing approach to (weak and) strong lensing. Why is the gravitational potential used in Clarkson’s derivation different from the standard definitions? Can the Roulette formalism solve the mass-sheet degeneracy?</li><li><em>Improving the Roulette formalism</em>: The current Roulette formalism is computed within the thin-lens and weak-field approximations. Do we see interesting effects if we discard of these?</li><li><em>Real data</em>: To make our models useful, we would have to implement with real data. To this end there is an array of more technical issues that calls for attention (databases, noice reduction).</li><li><em>Visualisation tool</em>: There is a lot to do to improve the visualisation tool. The goal here is to create a desktop application that can be run, with all the necessary qualities to effectively show-case gravitational lensing in general and the Roulette formalism in particular.</li><li><em>Model building</em>: We are particularly interested in cluster-lens profiles.</li><li><em>Lens-Mass reconstruction</em>: How do we actually obtain the lens mass from the roulette amplitudes provided by the machine-learning algorithms? Some sort of interpolation method or the like seems like a good guess.</li><li><em>Lensing of gravitational waves</em>.</li></ul><p><strong>Why this study? </strong>As mentioned in the previous project, we want to understand dark matter. Ad-mass retrieval of information from gravitationally lensed light is an excellent probe on the distribution of dark matter.</p>"}
+]},
+"/research/viscous": {"title": "How sticky is the universe?", "back": "/research", "blocks": [
+  {"html": "<h2>How sticky is the Universe?</h2>"},
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1627376153684-YCQCDV3RFWAE5UX6ALY4/honey-1006972_1280.jpg", "alt": "Honey", "cap": "All known physical fluids are a bit sticky. Syrup is very sticky."},
+  {"html": "<p><strong>Why this research?</strong><br>Shut up 🤐 Understanding the Universe is important.</p><p>In standard approaches to cosmology, one does not consider the Universe to be sticky — at least not today. Rather, on large scales, it is modelled as a perfect fluid. But is the Universe really not sticky at all?</p><p>If I whirl the coffee in my mug around, the motion dies out after a few seconds, or minutes. When the wind stirs up the waters, the roaring of the waves is a secure sign that the motion is fading.</p><p>But with the Universe? Does the motion really never settle? Or.. is there at least not even the slightest dissipation of energy?</p><p>Surely there is. In viscous cosmology we investigate whether or not such energy-dissipation mechanisms is capable of shedding light on the dark sector of our Universe…</p><p>In a recent paper (to come out) we suggest that this could resolve the so-called H0-tension. The Hubble constant contains information about the rate of expansion of rhe Universe today, and can be measured in many different ways. Principally, there are two categories of measurements: (i) Those extrapolated from measurements of the afterglow from the big bang and (ii) more direct measurements from the local Universe around us. The problem is that these groups of measurements yield different values. We propose a solution through bulk viscosity.</p><p>Have a read:</p><ul><li><a href=\"https://arxiv.org/abs/1601.04519\">[1601.04519] General Bulk-Viscous Solutions and Estimates of Bulk Viscosity in the Cosmic Fluid (arxiv.org)</a></li><li><a href=\"https://arxiv.org/abs/1612.01794\">[1612.01794] Characteristic Properties of Two Different Viscous Cosmology Models for the Future Universe (arxiv.org)</a></li><li><a href=\"https://arxiv.org/abs/2006.09514\">[2006.09514] Remarks on cosmological bulk viscosity in different epochs (arxiv.org)</a></li><li>To appear (2021): <em>Could bulk viscosity resolve the Hubble tension?</em></li></ul>"}
+]},
+"/normann-academy": {"title": "Normann Academy", "blocks": [
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1be85b6b-6760-483d-a30e-5076eb089514/ForsideNA.png", "alt": "DrNormann"},
+  {"html": "<h2>DrNormann</h2><p>God matematikk- og fysikkundervisning på norsk!</p><p>Slam.<br>Content in Norwegian…</p>"},
+  {"cards": [
+    {"title": "Forkurs matematikk", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1627385294293-PUAE2HGHFSPA0EJTW69T/Matte1.png", "alt": "Inneholder foreløpig: Derivasjon!", "href": "https://youtube.com/playlist?list=PLBSPq-MdQqrv5z53Bd1rUhWzJtnvO2j9N", "text": "Her finner du foreløpig kun en YouTube-spilleliste om derivasjon"},
+    {"title": "Ingeniørfysikk", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1627385199324-IU9N0O19VB6TNR41DP21/Fysikk1.png", "alt": "Ressurser i ingeniørfysikk!", "href": "/ingenirfysikk-1", "text": "Her finner du diverse ressurser i ingeniørfysikk-tema."},
+    {"title": "Kosmologi", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1627385778259-HR96NEU88NE2IF4H2EU3/Kosmo.png", "alt": "Kommer siden…!", "text": "Denne siden er foreløpig ikke-eksisterende…"}
+  ]}
+]},
+"/ingenirfysikk-1": {"title": "Ingeniørfysikk", "back": "/normann-academy", "blocks": [
+  {"html": "<h1>Ingeniørfysikk!</h1><h3>På disse sidene finner du diverse ressurser i ingeniørfysikk.</h3>"},
+  {"grid": [
+    {"cap": "Mekanikk", "href": "/ingenirfysikk-1/project-one-f5w4d-z9nem-s3jda-x8w73-jhyca", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/ff9ddb7f-d90b-4532-99b5-7a89f6a81a6b/Mekanikk.png"},
+    {"cap": "Fluidmekanikk", "href": "/ingenirfysikk-1/project-one-f5w4d-z9nem-s3jda-x8w73-jhyca-mkfkh", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/823f805c-d308-47fa-aca5-3649d4098806/Forside_fluid.png"},
+    {"cap": "Elektrisitet og magnetisme", "href": "/ingenirfysikk-1/project-one-f5w4d-z9nem-s3jda-x8w73-jhyca-mkfkh-25cpw", "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/e702a796-d4c8-4706-a37e-12a97b8ba872/ELMAG_forside.png"}
+  ]}
+]},
+"/ingenirfysikk-1/project-one-f5w4d-z9nem-s3jda-x8w73-jhyca": {"title": "Mekanikk", "back": "/ingenirfysikk-1", "blocks": [
+  {"html": "<h1>Mekanikk</h1><p>På denne siden finner du ressurser i Mekanikk. Mekanikk er den delen av fysikken som handler om å beskrive <em>årsaken</em> til bevegelse.</p>"}
+]},
+"/ingenirfysikk-1/project-one-f5w4d-z9nem-s3jda-x8w73-jhyca-mkfkh": {"title": "Fluidmekanikk", "back": "/ingenirfysikk-1", "blocks": [
+  {"html": "<h1>Fluidmekanikk</h1><p>På denne siden finner du ressurser i Fluidmekanikk. Dette den delen av fysikken som handler om å forstå fluider (væsker og gasser).</p>"}
+]},
+"/ingenirfysikk-1/project-one-f5w4d-z9nem-s3jda-x8w73-jhyca-mkfkh-25cpw": {"title": "Elektrisitet og magnetisme", "back": "/ingenirfysikk-1", "blocks": [
+  {"html": "<h1>Elektrisitet og magnetisme</h1><p>På denne siden finner du ressurser innen elektrisitet og magnetisme.</p>"}
+]},
+"/read": {"title": "Read", "blocks": [
+  {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1624025134949-QZ9IMUU71TV6VSXN1H1N/Illustrational.JPG", "alt": "Writing"},
+  {"html": "<h1>More to come…</h1>"}
+]},
+"/gallery": {"title": "Press photos", "blocks": [
+  {"html": "<h1>Press photos</h1>"},
+  {"gallery": [
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1671008911780-ARGYP729CEI6H0DXEQTB/bendavid_2214-Edit_1600px.jpg", "cap": "Photo by Kai T. Dragland"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1708943e-517c-4a97-b2b2-1d54f20ccf18/88C1F9FC-BF9B-4BE7-A5BF-DA222B53FB18.JPG", "cap": "Photo by Olaf Normann"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/4ae1c3b0-dbad-4e59-b676-b9eeb1c0acc1/Meg1_reduced.png", "cap": "Photo by Gjermund Øystese"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/81023f7a-e040-4db6-93de-d278f7d9c576/Enthusiastic_PhotoYngveVogtReduced.jpg", "cap": "Photo by Yngve Vogt"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/a439fefd-471f-4c7b-8e33-d1a479dbda31/meTedx1Reduced.png", "cap": ""},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/d7afd46b-0bf2-401e-8688-bf48d2f16617/Yngve_photo_YngveVogt_IMG_9504+Reduced.jpg", "cap": "Photo by Yngve Vogt"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/898ad2d1-1a19-4906-879b-c638d51fba50/WonderAweDavidJensenReduced.jpg", "cap": "Photo by David Jensen"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/bb82309e-6dd2-4e26-8296-fbeb9601ab36/Bachmann_FGPfinale+Troms%C3%B8+2018_BenDavidNormann_vinnerbilde1_reduced.jpg", "cap": "Photo by Bachmann"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/4223d3ea-253d-40c9-86c4-4c5055b8bb0a/8D8B5319-66FA-46DD-8E37-778F117DFB58.png", "cap": "Photo by Øystein Grimstad"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1671008343645-UU63L300M4GC3SYGTK1V/32CC8A56-4EDB-4E75-843C-D940B52A2FDC.jpg", "cap": "Photo by Øystein Grimstad"},
+    {"img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/338af1fd-c20b-4c76-8a1d-8776c2d74101/KaiDrageland_IEdagene2025.JPG", "cap": "Photo by Kai T. Dragland"}
+  ]}
+]}
+}

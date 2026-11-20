@@ -1,0 +1,87 @@
+{
+  "_help": "Edit this file to change the hub on the front page. A channel with an empty url is hidden. icon: yt, tt, ig, fb, in, x, link.",
+  "intro": {
+    "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621184490799-YJ0OU02FYSPO2WFAJM8A/meTedx4Reduced.png",
+    "text": "Physicist, teacher and presenter at NTNU Ålesund. Cosmology, mathematics and physics, on stage, on screen and in the classroom."
+  },
+  "channels": [
+    {
+      "name": "YouTube",
+      "handle": "@DrNormann",
+      "url": "https://www.youtube.com/@DrNormann",
+      "icon": "yt"
+    },
+    {
+      "name": "TikTok",
+      "handle": "",
+      "url": "",
+      "icon": "tt"
+    },
+    {
+      "name": "Instagram",
+      "handle": "@penofben",
+      "url": "https://www.instagram.com/penofben/",
+      "icon": "ig"
+    },
+    {
+      "name": "Facebook",
+      "handle": "ben.normann",
+      "url": "https://www.facebook.com/ben.normann",
+      "icon": "fb"
+    },
+    {
+      "name": "LinkedIn",
+      "handle": "Ben David Normann",
+      "url": "https://no.linkedin.com/in/ben-david-normann-5336ab39",
+      "icon": "in"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Fysikkhjelp",
+      "status": "Learning videos and material",
+      "text": "Physics and mathematics explained, with learning videos and material for students. Also on YouTube.",
+      "href": "https://fysikkhjelp.no",
+      "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1627385199324-IU9N0O19VB6TNR41DP21/Fysikk1.png",
+      "extra": {
+        "label": "Videos on YouTube",
+        "href": "https://www.youtube.com/@DrNormann"
+      }
+    },
+    {
+      "title": "Cosmology with Ben",
+      "status": "Award-winning mini-series",
+      "text": "A YouTube mini-series on cosmology (in Norwegian), made with a team from NTNU.",
+      "href": "/video/project-four-l3zw3-wtzbe",
+      "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/8c0de4d2-ea26-41cb-b91a-9a388c26ec4b/BenEple.png"
+    },
+    {
+      "title": "Nyans",
+      "status": "Finished",
+      "text": "A talk show at NTNU. One season of civilised conversations on hard topics.",
+      "href": "/video/nyans",
+      "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/3d77d8ca-2ec6-4b93-975d-4caf4d6ea83e/Nyans1.jpeg"
+    },
+    {
+      "title": "DrNormann",
+      "status": "Teaching",
+      "text": "Mathematics and physics teaching in Norwegian.",
+      "href": "/normann-academy",
+      "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1627385294293-PUAE2HGHFSPA0EJTW69T/Matte1.png"
+    },
+    {
+      "title": "Research",
+      "status": "Cosmology",
+      "text": "Anisotropic universes, viscous cosmology and gravitational lensing.",
+      "href": "/research",
+      "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621182285815-7KN9N6BPNQKAWYW4DIQ9/PhDThesis_Background+Reduced.jpg"
+    },
+    {
+      "title": "Talks and hosting",
+      "status": "TEDx, Forsker Grand Prix",
+      "text": "Recorded talks and shows, and how to book me.",
+      "href": "/video",
+      "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621183780599-AOVKF4ONR1BGAMGNE3RE/meTedx2Reduced.png"
+    }
+  ]
+}

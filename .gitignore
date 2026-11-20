@@ -1,0 +1,5 @@
+dist/
+images.json
+node_modules/
+.wrangler/
+*.png.tmp

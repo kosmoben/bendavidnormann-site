@@ -1,0 +1,16 @@
+{
+  // Static site for bendavidnormann.com, served by Cloudflare Workers static assets.
+  "name": "bendavidnormann",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true
+  // When the domain is on Cloudflare, add:
+  // "routes": [
+  //   { "pattern": "bendavidnormann.com", "custom_domain": true },
+  //   { "pattern": "www.bendavidnormann.com", "custom_domain": true }
+  // ]
+}
