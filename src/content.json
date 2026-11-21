@@ -23,7 +23,35 @@
     "cap": "The author",
     "href": "/read"
    }
-  ]
+  ],
+  "lang": "no"
+ },
+ "/en": {
+  "title": "Ben David Normann",
+  "kind": "home",
+  "blocks": [
+   {
+    "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621183780599-AOVKF4ONR1BGAMGNE3RE/meTedx2Reduced.png",
+    "cap": "The presenter",
+    "href": "/video"
+   },
+   {
+    "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621182285815-7KN9N6BPNQKAWYW4DIQ9/PhDThesis_Background+Reduced.jpg",
+    "cap": "The academic",
+    "href": "/research"
+   },
+   {
+    "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621183621429-CDMA80IZGBJD152QP005/Screenshot+2021-05-16+at+18.34.19.png",
+    "cap": "The teacher",
+    "href": "/normann-academy"
+   },
+   {
+    "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1620940806557-9556OZ4V71QDE1P89E1P/unsplash-image-8XddFc6NkBY.jpg",
+    "cap": "The author",
+    "href": "/read"
+   }
+  ],
+  "lang": "en"
  },
  "/about": {
   "title": "About",
@@ -57,7 +85,31 @@
     "button": "Send me an email",
     "href": "@CONTACT@"
    }
-  ]
+  ],
+  "lang": "en"
+ },
+ "/no/book-ben": {
+  "title": "Book Ben!",
+  "blocks": [
+   {
+    "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621185840480-90G2IFKUHFS2HRTLXOCP/meTedx1Reduced.jpg",
+    "alt": "Ben David Normann på scenen"
+   },
+   {
+    "html": "<h1>Book Ben!</h1><p>Jeg kan bookes både som <strong>foredragsholder</strong> og som <strong>konferansier</strong>, på <strong>norsk</strong> og <strong>engelsk</strong>.</p>"
+   },
+   {
+    "html": "<h2>Foredrag</h2><p>Foredrag om vitenskap, kosmologi, matematikk, fysikk og utdanning, tilpasset publikum. Forvent nysgjerrighet, humor og noen store spørsmål om universet.</p><h2>Konferansier</h2><p>Jeg brukes ofte som konferansier og programleder for konferanser, seminarer, show og formidlingsarrangementer, og som vert for samtaleprogram. Jeg sørger for at programmet går som det skal, at foredragsholderne skinner og at publikum er med hele dagen.</p><h2>Tidligere oppdrag</h2><p>Bedrifter, konferanser, TEDx, Kunnskapsdepartementet, universiteter, pubforedrag, standup og mye mer.</p>"
+   },
+   {
+    "html": "<p>Har du noe annet i tankene? Ta kontakt!</p>"
+   },
+   {
+    "button": "Send meg en e-post",
+    "href": "@CONTACT@"
+   }
+  ],
+  "lang": "no"
  },
  "/video": {
   "title": "Video",

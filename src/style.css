@@ -209,3 +209,26 @@ html { background: #050505; }
 /* Paint the sky on html so the fixed starfield canvas (z-index -1) sits above it. */
 html { background: radial-gradient(ellipse at 50% -10%, #0d1a10 0%, #050505 55%) fixed, #050505; }
 body { background: transparent; }
+
+/* ---- Language switch in the header ---- */
+.site-header nav a.lang { font-weight: 700; letter-spacing: .08em; opacity: .8; }
+.site-header nav a.lang:hover { opacity: 1; }
+
+/* ---- Big "under construction" rubber stamp (set "stamp" in links.json to "" to remove) ---- */
+.stamp-overlay {
+  position: fixed; inset: 0; z-index: 50; pointer-events: none;
+  display: grid; place-items: center; overflow: hidden;
+}
+.stamp-overlay span {
+  transform: rotate(-14deg);
+  font: 700 clamp(2rem, 9vw, 6.5rem)/1 "Architects Daughter", system-ui, sans-serif;
+  text-transform: uppercase; letter-spacing: .06em; white-space: nowrap;
+  color: #ff4d4d; padding: .15em .45em;
+  border: .09em solid currentColor; border-radius: .18em;
+  box-shadow: inset 0 0 0 .04em currentColor;
+  opacity: .72; mix-blend-mode: screen;
+  text-shadow: 0 0 .25em rgba(255, 77, 77, .5);
+  -webkit-mask-image: repeating-linear-gradient(115deg, #000 0 7px, rgba(0,0,0,.72) 7px 9px);
+          mask-image: repeating-linear-gradient(115deg, #000 0 7px, rgba(0,0,0,.72) 7px 9px);
+}
+@media (max-width: 600px) { .stamp-overlay span { font-size: 8vw; } }

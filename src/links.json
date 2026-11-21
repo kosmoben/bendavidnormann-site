@@ -1,9 +1,19 @@
 {
-  "_help": "Edit this file to change the hub on the front page. A channel with an empty url is hidden. icon: yt, tt, ig, fb, in, x, link.",
+  "_help": "Edit this file to change the hub on the front page. A channel with an empty url is hidden. icon: yt, tt, ig, fb, in, x, link. Text can be one string (same in both languages) or {\"no\": ..., \"en\": ...}.",
+  "stamp": {
+    "no": "Under ombygging",
+    "en": "Under construction"
+  },
   "intro": {
     "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1671008911780-ARGYP729CEI6H0DXEQTB/bendavid_2214-Edit_1600px.jpg",
-    "text": "Physicist, teacher, speaker and conference host. Cosmology, mathematics and physics, on stage, on screen and in the classroom at NTNU Ålesund.",
-    "tagline": "Cosmologist · Physicist · Speaker"
+    "text": {
+      "no": "Fysiker, kosmolog, lærer, foredragsholder og konferansier. Kosmologi, matematikk og fysikk på scenen, på skjermen og i klasserommet ved NTNU i Ålesund.",
+      "en": "Physicist, teacher, speaker and conference host. Cosmology, mathematics and physics, on stage, on screen and in the classroom at NTNU Ålesund."
+    },
+    "tagline": {
+      "no": "Kosmolog · Fysiker · Foredragsholder",
+      "en": "Cosmologist · Physicist · Speaker"
+    }
   },
   "channels": [
     {
@@ -40,59 +50,117 @@
   "projects": [
     {
       "title": "Fysikkhjelp",
-      "status": "Learning videos and material",
-      "text": "Physics and mathematics explained, with learning videos and material for students. Also on YouTube.",
+      "status": {
+        "no": "Læringsvideoer og -materiell",
+        "en": "Learning videos and material"
+      },
+      "text": {
+        "no": "Fysikk og matematikk forklart, med læringsvideoer og materiell for elever og studenter. Også på YouTube.",
+        "en": "Physics and mathematics explained, with learning videos and material for students. Also on YouTube."
+      },
       "href": "https://fysikkhjelp.no",
       "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1627385199324-IU9N0O19VB6TNR41DP21/Fysikk1.png",
       "extra": {
-        "label": "Videos on YouTube",
+        "label": {
+          "no": "Videoer på YouTube",
+          "en": "Videos on YouTube"
+        },
         "href": "https://www.youtube.com/@DrNormann"
       }
     },
     {
-      "title": "Cosmology with Ben",
-      "status": "Award-winning mini-series",
-      "text": "A YouTube mini-series on cosmology (in Norwegian), made with a team from NTNU.",
+      "title": {
+        "no": "Kosmologi med Ben",
+        "en": "Cosmology with Ben"
+      },
+      "status": {
+        "no": "Prisvinnende miniserie",
+        "en": "Award-winning mini-series"
+      },
+      "text": {
+        "no": "En miniserie om kosmologi på YouTube, laget sammen med et team fra NTNU.",
+        "en": "A YouTube mini-series on cosmology (in Norwegian), made with a team from NTNU."
+      },
       "href": "/video/project-four-l3zw3-wtzbe",
       "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/8c0de4d2-ea26-41cb-b91a-9a388c26ec4b/BenEple.png"
     },
     {
       "title": "Nyans",
-      "status": "Finished",
-      "text": "A talk show at NTNU. One season of civilised conversations on hard topics.",
+      "status": {
+        "no": "Avsluttet",
+        "en": "Finished"
+      },
+      "text": {
+        "no": "Et samtaleprogram ved NTNU. Én sesong med siviliserte samtaler om vanskelige temaer.",
+        "en": "A talk show at NTNU. One season of civilised conversations on hard topics."
+      },
       "href": "/video/nyans",
       "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/3d77d8ca-2ec6-4b93-975d-4caf4d6ea83e/Nyans1.jpeg"
     },
     {
       "title": "DrNormann",
-      "status": "Teaching",
-      "text": "Mathematics and physics teaching in Norwegian.",
+      "status": {
+        "no": "Undervisning",
+        "en": "Teaching"
+      },
+      "text": {
+        "no": "Undervisning i matematikk og fysikk på norsk.",
+        "en": "Mathematics and physics teaching in Norwegian."
+      },
       "href": "/normann-academy",
       "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1627385294293-PUAE2HGHFSPA0EJTW69T/Matte1.png"
     },
     {
-      "title": "Research",
-      "status": "Cosmology",
-      "text": "Anisotropic universes, viscous cosmology and gravitational lensing.",
+      "title": {
+        "no": "Forskning",
+        "en": "Research"
+      },
+      "status": {
+        "no": "Kosmologi",
+        "en": "Cosmology"
+      },
+      "text": {
+        "no": "Anisotrope univers, viskøs kosmologi og gravitasjonslinser.",
+        "en": "Anisotropic universes, viscous cosmology and gravitational lensing."
+      },
       "href": "/research",
       "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621182285815-7KN9N6BPNQKAWYW4DIQ9/PhDThesis_Background+Reduced.jpg"
     },
     {
-      "title": "Talks and hosting",
+      "title": {
+        "no": "Foredrag og konferansier",
+        "en": "Talks and hosting"
+      },
       "status": "TEDx, Forsker Grand Prix",
-      "text": "Recorded talks and shows, and how to book me.",
+      "text": {
+        "no": "Opptak av foredrag og show, og hvordan du booker meg.",
+        "en": "Recorded talks and shows, and how to book me."
+      },
       "href": "/video",
       "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1621183780599-AOVKF4ONR1BGAMGNE3RE/meTedx2Reduced.png"
     }
   ],
   "booking": [
     {
-      "title": "Talks",
-      "text": "Engaging talks on science, cosmology, mathematics, physics and education, for businesses, conferences, schools and pub audiences. In Norwegian or English."
+      "title": {
+        "no": "Foredrag",
+        "en": "Talks"
+      },
+      "text": {
+        "no": "Engasjerende foredrag om vitenskap, kosmologi, matematikk, fysikk og utdanning, for bedrifter, konferanser, skoler og pubpublikum. På norsk eller engelsk.",
+        "en": "Engaging talks on science, cosmology, mathematics, physics and education, for businesses, conferences, schools and pub audiences. In Norwegian or English."
+      }
     },
     {
-      "title": "Conference host / MC",
-      "text": "Frequently used as host and MC for conferences, award shows and outreach events. Keeps the programme on time and the audience awake."
+      "title": {
+        "no": "Konferansier",
+        "en": "Conference host / MC"
+      },
+      "text": {
+        "no": "Mye brukt som konferansier og programleder for konferanser, prisutdelinger og formidlingsarrangementer. Holder programmet i rute og publikum våkent.",
+        "en": "Frequently used as host and MC for conferences, award shows and outreach events. Keeps the programme on time and the audience awake."
+      }
     }
-  ]
+  ],
+  "_help_stamp": "stamp: the big 'under construction' stamp across every page. Set it to \"\" to remove it."
 }

@@ -11,11 +11,28 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DIST = os.path.join(ROOT, "dist")
 SITE = "Ben David Normann"
-# Contact link (same recipients as the old Squarespace "Contact" link, minus the bcc).
-CONTACT = ("mailto:normann.formidling@gmail.com?subject=Contact%20from%20bendavidnormann.com"
-           "&cc=ben.d.normann%40ntnu.no")
-NAV = [("Cosmology-with-Ben", "https://filmfreeway.com/projects/4033265"),
-       ("Nyans", "https://www.ntnu.no/nyans"), ("Home", "/"), ("About", "/about")]
+# Contact link: all mail from the site goes to normann.formidling@gmail.com (Ben, 2026-11-21).
+CONTACT = "mailto:normann.formidling@gmail.com?subject=Contact%20from%20bendavidnormann.com"
+# Two languages: Norwegian (default on .no) and English (default on .com).
+# The Worker (worker.js) picks the front page by domain, or by the visitor's own choice (?lang=).
+T = {
+ "no": {"nav": [("Kosmologi med Ben", "https://filmfreeway.com/projects/4033265"),
+                ("Nyans", "https://www.ntnu.no/nyans"), ("Hjem", "/"), ("Om meg", "/about")],
+        "book": "/no/book-ben", "book_me": "Book meg", "projects": "Prosjekter", "follow": "Følg meg",
+        "hi": "Hei, jeg er Ben", "more": "Mer om meg →", "explore": "Utforsk", "scroll": "Bla ned",
+        "back": "← Tilbake", "contact": "Kontakt", "menu": "Meny", "front": "forsiden",
+        "switch": ("EN", "English", "/?lang=en"),
+        "desc": "Ben David Normann: kosmolog, fysiker, foredragsholder og konferansier. "
+                "Kosmologi, fysikk og matematikk ved NTNU i Ålesund."},
+ "en": {"nav": [("Cosmology-with-Ben", "https://filmfreeway.com/projects/4033265"),
+                ("Nyans", "https://www.ntnu.no/nyans"), ("Home", "/"), ("About", "/about")],
+        "book": "/book-ben", "book_me": "Book me", "projects": "Projects", "follow": "Follow",
+        "hi": "Hi, I'm Ben", "more": "More about me →", "explore": "Explore", "scroll": "Scroll down",
+        "back": "← Back", "contact": "Contact", "menu": "Menu", "front": "front page",
+        "switch": ("NO", "Norsk", "/?lang=no"),
+        "desc": "Ben David Normann: presenter, academic, teacher and author. "
+                "Cosmology, physics and mathematics at NTNU Ålesund."},
+}
 LINKS = json.load(open(os.path.join(HERE, "links.json"), encoding="utf-8"))
 CHANNELS = [c for c in LINKS["channels"] if c.get("url")]
 SOCIAL = [(c["name"], c["url"], c.get("icon", "link")) for c in CHANNELS]
@@ -44,6 +61,13 @@ def img(url):
             candidate, i = f"{stem}-{i}{ext}", i + 1
         images[url] = candidate
     return "/img/" + images[url]
+
+
+def tr(v, lang):
+    """Text in links.json is either one string or {"no": ..., "en": ...}."""
+    if isinstance(v, dict):
+        return v.get(lang) or v.get("en") or v.get("no") or ""
+    return v or ""
 
 
 def esc(s):
@@ -96,7 +120,8 @@ def render_block(b):
     raise ValueError(b)
 
 
-def render_home(p):
+def render_home(p, lang):
+    t = T[lang]
     intro = LINKS["intro"]
     chans = "".join(
         f'<a class="chan" {link_attrs(c["url"])}>{ICONS.get(c.get("icon"), ICONS["link"])}'
@@ -105,52 +130,62 @@ def render_home(p):
     for pr in LINKS["projects"]:
         pic = f'<img src="{img(pr["img"])}" alt="" loading="lazy">' if pr.get("img") else ""
         extra = pr.get("extra")
-        extra_html = f'<a class="more" {link_attrs(extra["href"])}>{esc(extra["label"])} →</a>' if extra else ""
+        extra_html = f'<a class="more" {link_attrs(extra["href"])}>{esc(tr(extra["label"], lang))} →</a>' if extra else ""
         projects.append(
             f'<article class="project"><a class="cover" {link_attrs(pr["href"])} tabindex="-1">{pic}</a>'
-            f'<div class="body"><p class="status">{esc(pr.get("status"))}</p>'
-            f'<h3><a {link_attrs(pr["href"])}>{esc(pr["title"])}</a></h3>'
-            f'<p>{esc(pr.get("text"))}</p>{extra_html}</div></article>')
+            f'<div class="body"><p class="status">{esc(tr(pr.get("status"), lang))}</p>'
+            f'<h3><a {link_attrs(pr["href"])}>{esc(tr(pr["title"], lang))}</a></h3>'
+            f'<p>{esc(tr(pr.get("text"), lang))}</p>{extra_html}</div></article>')
     booking = ""
     if LINKS.get("booking"):
         cards = "".join(f'<div class="book-card"><span class="spark" aria-hidden="true">✦</span>'
-                        f'<h3>{esc(b["title"])}</h3><p>{esc(b["text"])}</p></div>'
+                        f'<h3>{esc(tr(b["title"], lang))}</h3><p>{esc(tr(b["text"], lang))}</p></div>'
                         for b in LINKS["booking"])
-        booking = (f'<section class="band"><h2><span class="spark">✦</span> Book me</h2><div class="booking">{cards}</div>'
-                   '<p class="btn-row"><a class="btn" href="/book-ben">Book Ben!</a></p></section>')
+        booking = (f'<section class="band"><h2><span class="spark">✦</span> {t["book_me"]}</h2><div class="booking">{cards}</div>'
+                   f'<p class="btn-row"><a class="btn" href="{t["book"]}">Book Ben!</a></p></section>')
     return f"""<section class="hero">
   <h1 class="logo"><img src="/brand/logo-arc.svg" alt="Ben David Normann" width="560" height="390"></h1>
-  <p class="tagline">{esc(intro.get("tagline", "Cosmologist · Physicist · Communicator"))}</p>
-  <p class="hero-cta"><a class="btn" href="/book-ben">Book Ben!</a> <a class="btn ghost" href="#projects">Explore</a></p>
-  <a class="scroll" href="#about" aria-label="Scroll down">↓</a>
+  <p class="tagline">{esc(tr(intro.get("tagline"), lang))}</p>
+  <p class="hero-cta"><a class="btn" href="{t["book"]}">Book Ben!</a> <a class="btn ghost" href="#projects">{t["explore"]}</a></p>
+  <a class="scroll" href="#about" aria-label="{t["scroll"]}">↓</a>
 </section>
 <section class="band about" id="about">
   <img class="portrait" src="{img(intro["img"])}" alt="Ben David Normann" loading="lazy">
-  <div><h2><span class="spark">✦</span> Hi, I'm Ben</h2><p>{esc(intro["text"])}</p>
-  <p><a class="more" href="/about">More about me →</a></p></div>
+  <div><h2><span class="spark">✦</span> {t["hi"]}</h2><p>{esc(tr(intro["text"], lang))}</p>
+  <p><a class="more" href="/about">{t["more"]}</a></p></div>
 </section>
 {booking}
-<section class="band" id="projects"><h2><span class="spark">✦</span> Projects</h2><div class="projects">{"".join(projects)}</div></section>
-<section class="band"><h2><span class="spark">✦</span> Follow</h2><div class="chans">{chans}</div></section>"""
+<section class="band" id="projects"><h2><span class="spark">✦</span> {t["projects"]}</h2><div class="projects">{"".join(projects)}</div></section>
+<section class="band"><h2><span class="spark">✦</span> {t["follow"]}</h2><div class="chans">{chans}</div></section>"""
 
 
 def page(path, p, theme=None):
-    title = SITE if path == "/" else f'{p["title"]} — {SITE}'
+    lang = p.get("lang", "en")
+    t = T[lang]
+    home = p.get("kind") == "home"
+    title = SITE if home else f'{p["title"]} — {SITE}'
     nav = "".join(
-        f'<a {link_attrs(h)}' + (' aria-current="page"' if h == path else "") + f'>{esc(t)}</a>' for t, h in NAV)
+        f'<a {link_attrs(h)}' + (' aria-current="page"' if h == path or (h == "/" and home) else "")
+        + f'>{esc(label)}</a>' for label, h in t["nav"])
+    code, name, href = t["switch"]
+    if path in ("/book-ben", "/no/book-ben"):
+        href = T["en" if lang == "no" else "no"]["book"]
+    nav += f'<a class="lang" href="{href}" hreflang="{code.lower()}" lang="{code.lower()}" title="{name}">{code}</a>'
+    stamp = tr(LINKS.get("stamp"), lang)
+    stamp_html = f'<div class="stamp-overlay" aria-hidden="true"><span>{esc(stamp)}</span></div>' if stamp else ""
     social = "".join(
         f'<a href="{h}" target="_blank" rel="noopener" aria-label="{t}">{ICONS[k]}</a>' for t, h, k in SOCIAL)
-    body = render_home(p) if p.get("kind") == "home" else "".join(render_block(b) for b in p["blocks"])
+    body = render_home(p, lang) if home else "".join(render_block(b) for b in p["blocks"])
     theme_css = (f'\n<link rel="stylesheet" href="/themes/{theme}.css"><meta name="robots" content="noindex">'
                  if theme else "")
-    back = f'<p class="back"><a href="{esc(p["back"])}">← Back</a></p>' if p.get("back") else ""
+    back = f'<p class="back"><a href="{esc(p["back"])}">{t["back"]}</a></p>' if p.get("back") else ""
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
-<meta name="description" content="Ben David Normann: presenter, academic, teacher and author. Cosmology, physics and mathematics at NTNU Ålesund.">
+<meta name="description" content="{esc(t["desc"])}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/brand/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png">
@@ -164,17 +199,18 @@ def page(path, p, theme=None):
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
 <header class="site-header">
-  <a class="brand" href="/" aria-label="{SITE}, front page"><img src="/brand/signature-neon.svg" alt="{SITE}" width="74" height="62"></a>
-  <input type="checkbox" id="menu" hidden><label for="menu" class="burger" aria-label="Menu">☰</label>
-  <nav>{nav}<span class="social">{social}</span><a class="btn" href="/book-ben">Book Ben!</a></nav>
+  <a class="brand" href="/" aria-label="{SITE}, {t["front"]}"><img src="/brand/signature-neon.svg" alt="{SITE}" width="74" height="62"></a>
+  <input type="checkbox" id="menu" hidden><label for="menu" class="burger" aria-label="{t["menu"]}">☰</label>
+  <nav>{nav}<span class="social">{social}</span><a class="btn" href="{t["book"]}">Book Ben!</a></nav>
 </header>
 <main>{back}{body}</main>
 <footer class="site-footer">
   <a class="stamp" href="/" aria-label="{SITE}"><img src="/brand/stamp.svg" alt="" width="96" height="96" loading="lazy"></a>
   <span class="copy">© Ben David Normann</span>
   <span class="social">{social}</span>
-  <a {link_attrs("@CONTACT@")}>Contact</a>
+  <a {link_attrs("@CONTACT@")}>{t["contact"]}</a>
 </footer>
+{stamp_html}
 <script src="/sky.js" defer></script>
 </body>
 </html>
@@ -198,6 +234,8 @@ def main():
     for path, p in content.items():
         out = os.path.join(DIST, path.strip("/"), "index.html") if path != "/" else os.path.join(DIST, "index.html")
         write(out, page(path, p))
+        if path == "/":
+            write(os.path.join(DIST, "no", "index.html"), page(path, p))
     # Design proposals: the front page with an alternative theme stylesheet.
     themes_dir = os.path.join(HERE, "themes")
     if os.path.isdir(themes_dir):
