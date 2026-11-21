@@ -3,7 +3,8 @@
 
 Usage:
   python3 build.py                 # build HTML only (images referenced from /img/)
-  python3 build.py --fetch-images  # also download the images from the Squarespace CDN into dist/img
+  python3 build.py --fetch-images  # also download images missing from src/img from the Squarespace CDN
+Images live in src/img (copied from Squarespace on 2026-11-21), so the site no longer depends on Squarespace.
 """
 import html, json, os, re, shutil, sys, urllib.parse, urllib.request
 
