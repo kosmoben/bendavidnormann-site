@@ -11,10 +11,11 @@
     "not_found_handling": "404-page",
     "run_worker_first": ["/"]
   },
-  "workers_dev": true
-  // Custom domains are added in the next step, once the old Squarespace records are removed:
-  // "routes": [
-  //   { "pattern": "bendavidnormann.com", "custom_domain": true },
-  //   { "pattern": "www.bendavidnormann.com", "custom_domain": true }
-  // ]
+  "workers_dev": true,
+  // Cloudflare creates the DNS records for these itself on deploy.
+  // Add bendavidnormann.no and www.bendavidnormann.no here once that zone is active in Cloudflare.
+  "routes": [
+    { "pattern": "bendavidnormann.com", "custom_domain": true },
+    { "pattern": "www.bendavidnormann.com", "custom_domain": true }
+  ]
 }
