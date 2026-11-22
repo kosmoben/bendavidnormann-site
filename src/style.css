@@ -264,3 +264,9 @@ body { background: transparent; }
 .clients p { font: 12px/1 var(--mono); letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
 .clients ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px; }
 .clients li { font: 600 15px/1 var(--mono); color: #e6eee3; padding: 9px 16px; border: 1px solid var(--card-line); border-radius: 999px; background: var(--card); }
+/* Name in green above the white headline; titles above the logo */
+.hero.split .eyebrow { font: 700 clamp(15px, 1.5vw, 19px)/1 var(--mono); letter-spacing: .28em; text-transform: uppercase;
+  color: var(--accent); text-shadow: var(--glow); margin: 0 0 18px; }
+.hero.split .hero-logo { flex-direction: column; align-items: center; }
+.hero.split .hero-logo .tagline { color: #cfd8cc; text-shadow: none; font-size: clamp(11px, 1.05vw, 14px); letter-spacing: .22em; margin: 0 0 6px; text-align: center; }
+@media (max-width: 760px) { .hero.split .hero-logo .tagline { white-space: normal; font-size: 12px; } }

@@ -160,12 +160,12 @@ def render_home(p, lang):
                    f'{clients}<p class="btn-row"><a class="btn" href="{t["book"]}">Book Ben!</a></p></section>')
     return f"""<section class="hero split">
   <div class="hero-text">
-    <p class="tagline">{esc(tr(intro.get("tagline"), lang))}</p>
+    <p class="eyebrow">Ben David Normann</p>
     <h1>{esc(tr(intro.get("title"), lang))}</h1>
     <p class="lead">{esc(tr(intro.get("lead"), lang))}</p>
     <p class="hero-cta"><a class="btn" href="{t["book"]}">Book Ben!</a> <a class="btn ghost" href="#projects">{t["explore"]}</a></p>
   </div>
-  <div class="hero-logo"><img src="/brand/logo-arc.svg" alt="Ben David Normann" width="560" height="390"></div>
+  <div class="hero-logo"><p class="tagline">{esc(tr(intro.get("tagline"), lang))}</p><img src="/brand/logo-arc.svg" alt="Ben David Normann" width="560" height="390"></div>
   <a class="scroll" href="#about" aria-label="{t["scroll"]}">↓</a>
 </section>
 <section class="band about" id="about">
