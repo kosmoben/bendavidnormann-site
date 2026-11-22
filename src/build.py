@@ -286,12 +286,6 @@ def main():
         for f in sorted(os.listdir(themes_dir)):
             name = os.path.splitext(f)[0]
             write(os.path.join(DIST, f"design-{name}", "index.html"), page("/", content["/"], theme=name))
-    for v in "abc":
-        for lang, base in (("no", "/"), ("en", "/en")):
-            q = dict(content[base], hero=v)
-            q["lang"] = lang
-            write(os.path.join(DIST, "forslag", v + ("" if lang == "no" else "-en"), "index.html"),
-                  page(base, q).replace("<head>", '<head>\n<meta name="robots" content="noindex">', 1))
     write(os.path.join(DIST, "404.html"), page("/404", {"title": "Not found", "blocks": [
         {"html": "<h1>Page not found</h1><p>Sorry, that page does not exist.</p>"},
         {"button": "Go to the front page", "href": "/"}]}))

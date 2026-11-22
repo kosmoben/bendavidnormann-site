@@ -24,7 +24,8 @@
     "href": "/read"
    }
   ],
-  "lang": "no"
+  "lang": "no",
+  "hero": "a"
  },
  "/en": {
   "title": "Ben David Normann",
@@ -51,7 +52,8 @@
     "href": "/read"
    }
   ],
-  "lang": "en"
+  "lang": "en",
+  "hero": "a"
  },
  "/about": {
   "title": "About",
