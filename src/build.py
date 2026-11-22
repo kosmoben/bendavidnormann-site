@@ -154,10 +154,14 @@ def render_home(p, lang):
                         for b in LINKS["booking"])
         booking = (f'<section class="band"><h2><span class="spark">✦</span> {t["book_me"]}</h2><div class="booking">{cards}</div>'
                    f'<p class="btn-row"><a class="btn" href="{t["book"]}">Book Ben!</a></p></section>')
-    return f"""<section class="hero">
-  <h1 class="logo"><img src="/brand/logo-arc.svg" alt="Ben David Normann" width="560" height="390"></h1>
-  <p class="tagline">{esc(tr(intro.get("tagline"), lang))}</p>
-  <p class="hero-cta"><a class="btn" href="{t["book"]}">Book Ben!</a> <a class="btn ghost" href="#projects">{t["explore"]}</a></p>
+    return f"""<section class="hero split">
+  <div class="hero-text">
+    <p class="tagline">{esc(tr(intro.get("tagline"), lang))}</p>
+    <h1>{esc(tr(intro.get("title"), lang))}</h1>
+    <p class="lead">{esc(tr(intro.get("lead"), lang))}</p>
+    <p class="hero-cta"><a class="btn" href="{t["book"]}">Book Ben!</a> <a class="btn ghost" href="#projects">{t["explore"]}</a></p>
+  </div>
+  <div class="hero-logo"><img src="/brand/logo-arc.svg" alt="Ben David Normann" width="560" height="390"></div>
   <a class="scroll" href="#about" aria-label="{t["scroll"]}">↓</a>
 </section>
 <section class="band about" id="about">

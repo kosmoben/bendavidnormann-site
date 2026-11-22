@@ -13,6 +13,14 @@
     "tagline": {
       "no": "Kosmolog · Fysiker · Foredragsholder",
       "en": "Cosmologist · Physicist · Speaker"
+    },
+    "title": {
+      "no": "Fysikk og kosmologi for alle",
+      "en": "Physics and cosmology for everyone"
+    },
+    "lead": {
+      "no": "Foredragsholder, konferansier og debattleder, på norsk og engelsk.",
+      "en": "Speaker, conference host and debate moderator, in Norwegian and English."
     }
   },
   "channels": [
