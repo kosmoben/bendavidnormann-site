@@ -131,6 +131,24 @@ def render_block(b):
     raise ValueError(b)
 
 
+def hero_variant(v, lang):
+    """Simplified hero proposals (2026-11-22): a = centred, b = text left/logo right, c = name only, tiny logo."""
+    t = T[lang]; intro = LINKS["intro"]
+    who, book = esc(tr(intro.get("who"), lang)), esc(tr(intro.get("bookable"), lang))
+    cta = (f'<p class="hero-cta"><a class="btn" href="{t["book"]}">Book Ben!</a> '
+           f'<a class="btn ghost" href="#projects">{t["explore"]}</a></p>')
+    logo = '<img class="hl" src="/brand/logo-arc.svg" alt="" width="560" height="390">'
+    if v == "a":
+        inner = f'{logo}<h1>Ben David Normann</h1><p class="who">{who}</p><p class="book">{book}</p>{cta}'
+    elif v == "b":
+        inner = (f'<div class="hv-text"><h1>Ben David Normann</h1><p class="who">{who}</p><p class="book">{book}</p>{cta}</div>'
+                 f'<div class="hv-logo">{logo}</div>')
+    else:
+        inner = f'<h1>Ben David Normann</h1><p class="who">{who}</p><p class="book">{book}</p>{cta}'
+    return (f'<section class="hero hv hv-{v}">{inner}'
+            f'<a class="scroll" href="#about" aria-label="{t["scroll"]}">↓</a></section>\n')
+
+
 def render_home(p, lang):
     t = T[lang]
     intro = LINKS["intro"]
@@ -158,7 +176,11 @@ def render_home(p, lang):
                         for b in LINKS["booking"])
         booking = (f'<section class="band"><h2><span class="spark">✦</span> {t["book_me"]}</h2><div class="booking">{cards}</div>'
                    f'{clients}<p class="btn-row"><a class="btn" href="{t["book"]}">Book Ben!</a></p></section>')
-    return f"""<section class="hero split">
+    if p.get("hero"):
+        hero = hero_variant(p["hero"], lang)
+    else:
+        hero = None
+    split = f"""<section class="hero split">
   <div class="hero-text">
     <p class="eyebrow">Ben David Normann</p>
     <h1>{esc(tr(intro.get("title"), lang))}</h1>
@@ -168,7 +190,8 @@ def render_home(p, lang):
   <div class="hero-logo"><p class="tagline">{esc(tr(intro.get("tagline"), lang))}</p><img src="/brand/logo-arc.svg" alt="Ben David Normann" width="560" height="390"></div>
   <a class="scroll" href="#about" aria-label="{t["scroll"]}">↓</a>
 </section>
-<section class="band about" id="about">
+"""
+    return (hero or split) + f"""<section class="band about" id="about">
   <img class="portrait" src="{img(intro["img"])}" alt="Ben David Normann" loading="lazy">
   <div><h2><span class="spark">✦</span> {t["hi"]}</h2>{"".join(f"<p>{esc(par)}</p>" for par in tr(intro["text"], lang).split(chr(10) + chr(10)))}
   <p><a class="more" href="/about">{t["more"]}</a></p></div>
@@ -263,6 +286,12 @@ def main():
         for f in sorted(os.listdir(themes_dir)):
             name = os.path.splitext(f)[0]
             write(os.path.join(DIST, f"design-{name}", "index.html"), page("/", content["/"], theme=name))
+    for v in "abc":
+        for lang, base in (("no", "/"), ("en", "/en")):
+            q = dict(content[base], hero=v)
+            q["lang"] = lang
+            write(os.path.join(DIST, "forslag", v + ("" if lang == "no" else "-en"), "index.html"),
+                  page(base, q).replace("<head>", '<head>\n<meta name="robots" content="noindex">', 1))
     write(os.path.join(DIST, "404.html"), page("/404", {"title": "Not found", "blocks": [
         {"html": "<h1>Page not found</h1><p>Sorry, that page does not exist.</p>"},
         {"button": "Go to the front page", "href": "/"}]}))

@@ -21,6 +21,14 @@
     "lead": {
       "no": "Også konferansier, debattleder og programleder, på scene og skjerm.",
       "en": "Also a conference host, debate moderator and talk-show host, on stage and screen."
+    },
+    "who": {
+      "no": "Kosmolog og fysiker som formidler universet.",
+      "en": "Cosmologist and physicist who explains the Universe."
+    },
+    "bookable": {
+      "no": "Bookes som foredragsholder, konferansier og debattleder.",
+      "en": "Available as speaker, conference host and debate moderator."
     }
   },
   "channels": [
