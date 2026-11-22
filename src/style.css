@@ -163,7 +163,7 @@ main:has(.hero) { max-width: 1100px; padding-top: 0; }
   min-height: calc(100vh - 96px); margin: 0 !important; grid-template-columns: none !important; position: relative; }
 .hero h1.logo { margin: 0; }
 .hero h1.logo img { width: min(620px, 92vw); height: auto; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; aspect-ratio: auto !important; background: none !important; filter: drop-shadow(0 0 24px rgba(157,255,122,.18)); }
-.tagline { font: 14px/1 var(--mono); letter-spacing: .35em; text-transform: uppercase; color: var(--muted); margin: 8px 0 32px; }
+.tagline { font: clamp(17px, 2vw, 22px)/1.3 var(--mono); letter-spacing: .3em; text-transform: uppercase; color: #cfd8cc; margin: 12px 0 34px; }
 .hero-cta .btn { margin: 4px; }
 .scroll { position: absolute; bottom: 18px; color: var(--muted); text-decoration: none; font-size: 22px; animation: bob 2.4s ease-in-out infinite; }
 @keyframes bob { 50% { transform: translateY(6px); } }
@@ -200,7 +200,7 @@ figure.wide img, .tile img, .card img, .gallery img { border-radius: 14px; borde
   .brand img { height: 50px; }
   .about { grid-template-columns: 1fr; text-align: center; padding: 24px; }
   .about .portrait { width: 160px; margin: 0 auto; }
-  .tagline { letter-spacing: .2em; font-size: 12px; }
+  .tagline { letter-spacing: .18em; font-size: 15px; }
   section.band h2 { font-size: 30px; }
   .hero { min-height: calc(100svh - 80px); }
 }
@@ -211,7 +211,8 @@ html { background: radial-gradient(ellipse at 50% -10%, #0d1a10 0%, #050505 55%)
 body { background: transparent; }
 
 /* ---- Language switch in the header ---- */
-.site-header nav a.lang { font-weight: 700; letter-spacing: .08em; opacity: .8; }
+.site-header nav a.lang { display: inline-flex; align-items: center; opacity: .85; }
+.site-header nav a.lang svg { display: block; border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
 .site-header nav a.lang:hover { opacity: 1; }
 
 /* ---- Big "under construction" rubber stamp (set "stamp" in links.json to "" to remove) ---- */
@@ -221,7 +222,7 @@ body { background: transparent; }
 }
 .stamp-overlay span {
   transform: rotate(-14deg);
-  font: 700 clamp(2rem, 9vw, 6.5rem)/1 "Architects Daughter", system-ui, sans-serif;
+  font: 700 clamp(2rem, 6.5vw, 5.5rem)/1 "Architects Daughter", system-ui, sans-serif;
   text-transform: uppercase; letter-spacing: .06em; white-space: nowrap;
   color: #ff4d4d; padding: .15em .45em;
   border: .09em solid currentColor; border-radius: .18em;
@@ -232,3 +233,7 @@ body { background: transparent; }
           mask-image: repeating-linear-gradient(115deg, #000 0 7px, rgba(0,0,0,.72) 7px 9px);
 }
 @media (max-width: 600px) { .stamp-overlay span { font-size: 8vw; } }
+.hero p.tagline { max-width: none; }
+/* Header icon = the round stamp (same as the footer) */
+.brand img { height: 56px; width: 56px; margin: 0; filter: drop-shadow(0 0 6px rgba(157,255,122,.35)); }
+@media (max-width: 700px) { .brand img { height: 44px; width: 44px; } }

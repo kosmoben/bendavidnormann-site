@@ -18,7 +18,7 @@ CONTACT = "mailto:normann.formidling@gmail.com?subject=Contact%20from%20bendavid
 # The Worker (worker.js) picks the front page by domain, or by the visitor's own choice (?lang=).
 T = {
  "no": {"nav": [("Kosmologi med Ben", "https://filmfreeway.com/projects/4033265"),
-                ("Nyans", "https://www.ntnu.no/nyans"), ("Hjem", "/"), ("Om meg", "/about")],
+                ("Nyans", "https://www.ntnu.no/nyans"), ("Om meg", "/about")],
         "book": "/no/book-ben", "book_me": "Book meg", "projects": "Prosjekter", "follow": "Følg meg",
         "hi": "Hei, jeg er Ben", "more": "Mer om meg →", "explore": "Utforsk", "scroll": "Bla ned",
         "back": "← Tilbake", "contact": "Kontakt", "menu": "Meny", "front": "forsiden",
@@ -26,13 +26,23 @@ T = {
         "desc": "Ben David Normann: kosmolog, fysiker, foredragsholder og konferansier. "
                 "Kosmologi, fysikk og matematikk ved NTNU i Ålesund."},
  "en": {"nav": [("Cosmology-with-Ben", "https://filmfreeway.com/projects/4033265"),
-                ("Nyans", "https://www.ntnu.no/nyans"), ("Home", "/"), ("About", "/about")],
+                ("Nyans", "https://www.ntnu.no/nyans"), ("About", "/about")],
         "book": "/book-ben", "book_me": "Book me", "projects": "Projects", "follow": "Follow",
         "hi": "Hi, I'm Ben", "more": "More about me →", "explore": "Explore", "scroll": "Scroll down",
         "back": "← Back", "contact": "Contact", "menu": "Menu", "front": "front page",
         "switch": ("NO", "Norsk", "/?lang=no"),
         "desc": "Ben David Normann: presenter, academic, teacher and author. "
                 "Cosmology, physics and mathematics at NTNU Ålesund."},
+}
+FLAGS = {
+ # Small inline flags for the language switch.
+ "no": '<svg viewBox="0 0 22 16" width="26" height="19" aria-hidden="true"><rect width="22" height="16" fill="#ba0c2f"/>'
+       '<path d="M6 0h4v16H6zM0 6h22v4H0z" fill="#fff"/><path d="M7 0h2v16H7zM0 7h22v2H0z" fill="#00205b"/></svg>',
+ "en": '<svg viewBox="0 0 60 30" width="26" height="13" aria-hidden="true"><clipPath id="uk"><path d="M0 0v30h60V0z"/></clipPath>'
+       '<clipPath id="ukt"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#uk)">'
+       '<path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>'
+       '<path d="M0 0l60 30m0-30L0 30" clip-path="url(#ukt)" stroke="#C8102E" stroke-width="4"/>'
+       '<path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>',
 }
 LINKS = json.load(open(os.path.join(HERE, "links.json"), encoding="utf-8"))
 CHANNELS = [c for c in LINKS["channels"] if c.get("url")]
@@ -171,7 +181,8 @@ def page(path, p, theme=None):
     code, name, href = t["switch"]
     if path in ("/book-ben", "/no/book-ben"):
         href = T["en" if lang == "no" else "no"]["book"]
-    nav += f'<a class="lang" href="{href}" hreflang="{code.lower()}" lang="{code.lower()}" title="{name}">{code}</a>'
+    nav += (f'<a class="lang" href="{href}" hreflang="{code.lower()}" lang="{code.lower()}" title="{name}" '
+            f'aria-label="{name}">{FLAGS[code.lower()]}</a>')
     stamp = tr(LINKS.get("stamp"), lang)
     stamp_html = f'<div class="stamp-overlay" aria-hidden="true"><span>{esc(stamp)}</span></div>' if stamp else ""
     social = "".join(
@@ -200,7 +211,7 @@ def page(path, p, theme=None):
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
 <header class="site-header">
-  <a class="brand" href="/" aria-label="{SITE}, {t["front"]}"><img src="/brand/signature-neon.svg" alt="{SITE}" width="74" height="62"></a>
+  <a class="brand" href="/" aria-label="{SITE}, {t["front"]}"><img src="/brand/stamp.svg" alt="{SITE}" width="56" height="56"></a>
   <input type="checkbox" id="menu" hidden><label for="menu" class="burger" aria-label="{t["menu"]}">☰</label>
   <nav>{nav}<span class="social">{social}</span><a class="btn" href="{t["book"]}">Book Ben!</a></nav>
 </header>
