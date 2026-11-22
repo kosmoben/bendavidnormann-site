@@ -162,7 +162,7 @@ def render_home(p, lang):
 </section>
 <section class="band about" id="about">
   <img class="portrait" src="{img(intro["img"])}" alt="Ben David Normann" loading="lazy">
-  <div><h2><span class="spark">✦</span> {t["hi"]}</h2><p>{esc(tr(intro["text"], lang))}</p>
+  <div><h2><span class="spark">✦</span> {t["hi"]}</h2>{"".join(f"<p>{esc(par)}</p>" for par in tr(intro["text"], lang).split(chr(10) + chr(10)))}
   <p><a class="more" href="/about">{t["more"]}</a></p></div>
 </section>
 {booking}
