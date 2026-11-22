@@ -106,19 +106,6 @@
       "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/3d77d8ca-2ec6-4b93-975d-4caf4d6ea83e/Nyans1.jpeg"
     },
     {
-      "title": "DrNormann",
-      "status": {
-        "no": "Undervisning",
-        "en": "Teaching"
-      },
-      "text": {
-        "no": "Undervisning i matematikk og fysikk på norsk.",
-        "en": "Mathematics and physics teaching in Norwegian."
-      },
-      "href": "/normann-academy",
-      "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1627385294293-PUAE2HGHFSPA0EJTW69T/Matte1.png"
-    },
-    {
       "title": {
         "no": "Forskning",
         "en": "Research"
