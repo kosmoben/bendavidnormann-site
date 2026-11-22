@@ -19,8 +19,8 @@
       "en": "Physics and cosmology for everyone"
     },
     "lead": {
-      "no": "Foredragsholder, konferansier og debattleder, på norsk og engelsk.",
-      "en": "Speaker, conference host and debate moderator, in Norwegian and English."
+      "no": "Jeg formidler fysikk og kosmologi, og brukes ofte som konferansier, debattleder og programleder på scene og skjerm.",
+      "en": "I communicate physics and cosmology, and I am often hired as a conference host, debate moderator and talk-show host on stage and screen."
     }
   },
   "channels": [
@@ -167,6 +167,16 @@
       "text": {
         "no": "Mye brukt som konferansier og programleder for konferanser, prisutdelinger og formidlingsarrangementer. Holder programmet i rute og publikum våkent.",
         "en": "Frequently used as host and MC for conferences, award shows and outreach events. Keeps the programme on time and the audience awake."
+      }
+    },
+    {
+      "title": {
+        "no": "Debattleder og programleder",
+        "en": "Debate moderator and talk-show host"
+      },
+      "text": {
+        "no": "Leder debatter og panelsamtaler med trygg hånd, og har vært programleder for samtaleprogram på skjerm (Nyans, NTNU). Får fram de gode samtalene, også om vanskelige temaer.",
+        "en": "Leads debates and panel discussions with a steady hand, and has hosted a talk show on screen (Nyans, NTNU). Brings out good conversations, also on hard topics."
       }
     }
   ],
