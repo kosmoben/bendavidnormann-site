@@ -258,3 +258,9 @@ body { background: transparent; }
   .hero.split .hero-cta .btn { margin: 4px; }
 }
 @media (max-width: 760px) { .hero.split .tagline { white-space: normal; letter-spacing: .15em; } }
+
+/* ---- Clients row under "Book me" ---- */
+.clients { margin: 28px 0 8px; text-align: center; }
+.clients p { font: 12px/1 var(--mono); letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+.clients ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px; }
+.clients li { font: 600 15px/1 var(--mono); color: #e6eee3; padding: 9px 16px; border: 1px solid var(--card-line); border-radius: 999px; background: var(--card); }

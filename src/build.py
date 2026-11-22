@@ -19,7 +19,7 @@ CONTACT = "mailto:normann.formidling@gmail.com?subject=Contact%20from%20bendavid
 T = {
  "no": {"nav": [("Kosmologi med Ben", "https://filmfreeway.com/projects/4033265"),
                 ("Nyans", "https://www.ntnu.no/nyans"), ("Om meg", "/about")],
-        "book": "/no/book-ben", "book_me": "Book meg", "projects": "Prosjekter", "follow": "Følg meg",
+        "book": "/no/book-ben", "book_me": "Book meg", "clients": "Oppdragsgivere blant annet", "projects": "Prosjekter", "follow": "Følg meg",
         "hi": "Hei, jeg er Ben", "more": "Mer om meg →", "explore": "Utforsk", "scroll": "Bla ned",
         "back": "← Tilbake", "contact": "Kontakt", "menu": "Meny", "front": "forsiden",
         "switch": ("EN", "English", "/?lang=en"),
@@ -27,7 +27,7 @@ T = {
                 "Kosmologi, fysikk og matematikk ved NTNU i Ålesund."},
  "en": {"nav": [("Cosmology-with-Ben", "https://filmfreeway.com/projects/4033265"),
                 ("Nyans", "https://www.ntnu.no/nyans"), ("About", "/about")],
-        "book": "/book-ben", "book_me": "Book me", "projects": "Projects", "follow": "Follow",
+        "book": "/book-ben", "book_me": "Book me", "clients": "Clients include", "projects": "Projects", "follow": "Follow",
         "hi": "Hi, I'm Ben", "more": "More about me →", "explore": "Explore", "scroll": "Scroll down",
         "back": "← Back", "contact": "Contact", "menu": "Menu", "front": "front page",
         "switch": ("NO", "Norsk", "/?lang=no"),
@@ -148,12 +148,16 @@ def render_home(p, lang):
             f'<h3><a {link_attrs(pr["href"])}>{esc(tr(pr["title"], lang))}</a></h3>'
             f'<p>{esc(tr(pr.get("text"), lang))}</p>{extra_html}</div></article>')
     booking = ""
+    clients = ""
+    if LINKS.get("clients"):
+        names = "".join(f"<li>{esc(tr(c, lang))}</li>" for c in LINKS["clients"])
+        clients = f'<div class="clients"><p>{t["clients"]}</p><ul>{names}</ul></div>'
     if LINKS.get("booking"):
         cards = "".join(f'<div class="book-card"><span class="spark" aria-hidden="true">✦</span>'
                         f'<h3>{esc(tr(b["title"], lang))}</h3><p>{esc(tr(b["text"], lang))}</p></div>'
                         for b in LINKS["booking"])
         booking = (f'<section class="band"><h2><span class="spark">✦</span> {t["book_me"]}</h2><div class="booking">{cards}</div>'
-                   f'<p class="btn-row"><a class="btn" href="{t["book"]}">Book Ben!</a></p></section>')
+                   f'{clients}<p class="btn-row"><a class="btn" href="{t["book"]}">Book Ben!</a></p></section>')
     return f"""<section class="hero split">
   <div class="hero-text">
     <p class="tagline">{esc(tr(intro.get("tagline"), lang))}</p>

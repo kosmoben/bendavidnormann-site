@@ -180,5 +180,20 @@
       }
     }
   ],
-  "_help_stamp": "stamp: the big 'under construction' stamp across every page. Set it to \"\" to remove it."
+  "_help_stamp": "stamp: the big 'under construction' stamp across every page. Set it to \"\" to remove it.",
+  "clients": [
+    "NTNU",
+    "TEDx",
+    "NRK",
+    {
+      "no": "Kontaktkonferansen (Kunnskapsdepartementet)",
+      "en": "Kontaktkonferansen (Ministry of Education)"
+    },
+    "UiS",
+    {
+      "no": "TREFF (UiT)",
+      "en": "TREFF (UiT)"
+    }
+  ],
+  "_help_clients": "clients: names shown as 'Oppdragsgivere' under Book me. Plain text, no logos."
 }
