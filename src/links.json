@@ -5,7 +5,7 @@
     "en": "Under construction"
   },
   "intro": {
-    "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1671008911780-ARGYP729CEI6H0DXEQTB/bendavid_2214-Edit_1600px.jpg",
+    "img": "/img/ben-portrait-cut.png",
     "text": {
       "no": "Jeg har doktorgrad i matematisk kosmologi og master i fysikk, og er en prisbelønnet formidler. Jeg liker å prate om naturvitenskap og universet med alle fra barn og unge til tenkende voksne. Jeg holder foredrag innen naturvitenskap, fysikk, om universet og om tro og metafysikk. Finnes det multivers?\n\nJeg tar også oppdrag som foredragsholder, konferansier og debattleder, og kommer gjerne på skolebesøk.",
       "en": "I hold a PhD in mathematical cosmology and a master's degree in physics, and I am an award-winning science communicator. I love talking about natural science and the Universe with everyone from children and young people to thinking adults. I give talks on natural science, physics, the Universe, and faith and metaphysics. Is there a multiverse?\n\nI also take on assignments as a speaker, conference host and debate moderator, and I am happy to visit schools."
@@ -29,7 +29,8 @@
     "bookable": {
       "no": "Bookes som foredragsholder, konferansier og debattleder.",
       "en": "Available as speaker, conference host and debate moderator."
-    }
+    },
+    "img_original": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1671008911780-ARGYP729CEI6H0DXEQTB/bendavid_2214-Edit_1600px.jpg"
   },
   "channels": [
     {

@@ -294,3 +294,5 @@ body { background: transparent; }
 }
 .hero.hv-a, .hero.hv-c { gap: 0 !important; }
 .hero.hv-a .hl { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; background: none !important; aspect-ratio: auto !important; object-fit: contain; }
+/* Portrait without white background: Ben against a dark, slightly green sky */
+.about .portrait { background: radial-gradient(circle at 50% 35%, #1a2a1d 0%, #0a120c 60%, #050505 100%); object-position: 50% 30%; }
