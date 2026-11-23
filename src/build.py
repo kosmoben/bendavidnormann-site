@@ -152,6 +152,10 @@ def hero_variant(v, lang):
     if v == "a":
         name = '<h1 class="ben-name"><img class="ben-word" src="/brand/ben.svg" alt="Ben" width="742" height="656"> David Normann</h1>'
         inner = f'{name}<p class="who">{who}</p><p class="book">{book}</p>{cta}'
+    elif v == "a3":
+        name = '<h1 class="ben-name"><img class="ben-word" src="/brand/ben.svg" alt="Ben" width="742" height="656"> David Normann</h1>'
+        inner = (f'<div class="hv-row"><div class="hv-text">{name}<p class="who">{who}</p><p class="book">{book}</p>{cta}</div>'
+                 f'<img class="scene-photo" src="/brand/ben-scene.png" alt="{"Ben David Normann on stage" if lang == "en" else "Ben David Normann på scenen"}" width="718" height="470"></div>')
     elif v == "a2":
         inner = f'{logo}<h1>Ben David Normann</h1><p class="who">{who}</p><p class="book">{book}</p>{cta}'
     elif v == "b":
@@ -186,12 +190,14 @@ def render_home(p, lang):
     if LINKS.get("clients"):
         names = "".join(f"<li>{esc(tr(c, lang))}</li>" for c in LINKS["clients"])
         clients = f'<div class="clients"><p>{t["clients"]}</p><ul>{names}</ul></div>'
+    scene = (f'<img class="scene-photo book-photo" src="/brand/ben-scene.png" alt="{"Ben David Normann on stage" if lang == "en" else "Ben David Normann på scenen"}" width="718" height="470" loading="lazy">'
+             if LINKS.get("booking_photo") else "")
     if LINKS.get("booking"):
         cards = "".join(f'<div class="book-card"><span class="spark" aria-hidden="true">✦</span>'
                         f'<h3>{esc(tr(b["title"], lang))}</h3><p>{esc(tr(b["text"], lang))}</p></div>'
                         for b in LINKS["booking"])
         booking = (f'<section class="band"><h2><span class="spark">✦</span> {t["book_me"]}</h2><div class="booking">{cards}</div>'
-                   f'{clients}<p class="btn-row"><a class="btn" href="{t["book"]}">Book Ben!</a></p></section>')
+                   f'{scene}{clients}<p class="btn-row"><a class="btn" href="{t["book"]}">Book Ben!</a></p></section>')
     if p.get("hero"):
         hero = hero_variant(p["hero"], lang)
     else:
