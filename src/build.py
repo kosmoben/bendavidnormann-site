@@ -173,7 +173,19 @@ def render_home(p, lang):
     booking = ""
     clients = ""
     if LINKS.get("clients"):
-        names = "".join(f"<li>{esc(tr(c, lang))}</li>" for c in LINKS["clients"])
+        items = []
+        for c in LINKS["clients"]:
+            if isinstance(c, dict) and c.get("logo"):
+                name = esc(tr(c["name"], lang))
+                label = ""
+                if c.get("label"):
+                    sub = f'<small>{esc(tr(c["sub"], lang))}</small>' if c.get("sub") else ""
+                    label = f'<span class="client-label" aria-hidden="true"><b>{esc(tr(c["label"], lang))}</b>{sub}</span>'
+                items.append(f'<li class="logo" title="{name}" style="--h:{c.get("h", 30)}px">'
+                             f'<img src="{tr(c["logo"], lang)}" alt="{name}" loading="lazy">{label}</li>')
+            else:
+                items.append(f"<li>{esc(tr(c, lang))}</li>")
+        names = "".join(items)
         clients = f'<div class="clients"><p>{t["clients"]}</p><ul>{names}</ul></div>'
     if LINKS.get("booking"):
         cards = "".join(f'<div class="book-card"><span class="spark" aria-hidden="true">✦</span>'

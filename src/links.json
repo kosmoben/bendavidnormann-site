@@ -174,18 +174,25 @@
     }
   ],
   "_help_stamp": "stamp: the big 'under construction' stamp across every page. Set it to \"\" to remove it.",
+  "_help_client_logos": "Each client: name (alt text), logo (white SVG in src/brand/clients, or {no, en}), h (logo height in px), optional label/sub text next to the logo. A plain string still works as text.",
   "clients": [
-    "NTNU",
-    "TEDx",
-    "NRK",
+    {"name": "NTNU", "logo": "/brand/clients/ntnu.svg", "h": 24},
+    {"name": "TEDx", "logo": "/brand/clients/tedx.svg", "h": 26},
+    {"name": "NRK", "logo": "/brand/clients/nrk.svg", "h": 30},
     {
-      "no": "Kontaktkonferansen (Kunnskapsdepartementet)",
-      "en": "Kontaktkonferansen (Ministry of Education)"
+      "name": {"no": "Kontaktkonferansen (Kunnskapsdepartementet)", "en": "Kontaktkonferansen (Norwegian Ministry of Education)"},
+      "logo": "/brand/clients/regjeringen.svg", "h": 34,
+      "label": {"no": "Kunnskapsdepartementet", "en": "Ministry of Education"}
     },
-    "UiS",
     {
-      "no": "TREFF (UiT)",
-      "en": "TREFF (UiT)"
+      "name": {"no": "Universitetet i Stavanger", "en": "University of Stavanger"},
+      "logo": {"no": "/brand/clients/uis-no.svg", "en": "/brand/clients/uis-en.svg"}, "h": 42
+    },
+    {
+      "name": {"no": "TREFF (UiT Norges arktiske universitet)", "en": "TREFF (UiT The Arctic University of Norway)"},
+      "logo": "/brand/clients/uit.svg", "h": 44,
+      "label": "UiT",
+      "sub": {"no": "Norges arktiske universitet", "en": "The Arctic University of Norway"}
     }
   ],
   "_help_clients": "clients: names shown as 'Oppdragsgivere' under Book me. Plain text, no logos."

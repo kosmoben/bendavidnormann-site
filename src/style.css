@@ -264,6 +264,17 @@ body { background: transparent; }
 .clients p { font: 12px/1 var(--mono); letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
 .clients ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px; }
 .clients li { font: 600 15px/1 var(--mono); color: #e6eee3; padding: 9px 16px; border: 1px solid var(--card-line); border-radius: 999px; background: var(--card); }
+/* Client logos: white, a little dimmed, neon-green glow on hover */
+.clients ul:has(.logo) { gap: 30px 52px; align-items: center; max-width: 640px; margin: 6px auto 0; }
+.clients li.logo { display: flex; align-items: center; gap: 10px; padding: 0; border: 0; border-radius: 0; background: none;
+  opacity: .78; transition: opacity .25s, filter .25s; }
+.clients li.logo:hover { opacity: 1; filter: drop-shadow(0 0 6px rgba(157,255,122,.75)) drop-shadow(0 0 14px rgba(157,255,122,.35)); }
+.clients li.logo img { display: block; height: var(--h); width: auto; max-width: 46vw; border: 0; border-radius: 0; box-shadow: none; background: none; }
+.client-label { display: flex; flex-direction: column; text-align: left; color: #fff; font: 500 15px/1.15 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.client-label b { font-size: 22px; font-weight: 700; letter-spacing: .01em; }
+.client-label b:only-child { font-size: 16px; font-weight: 500; }
+.client-label small { font-size: 11px; font-weight: 400; max-width: 11em; }
+@media (max-width: 560px) { .clients ul:has(.logo) { gap: 24px 30px; } .clients li.logo img { height: calc(var(--h) * .85); } }
 /* Name in green above the white headline; titles above the logo */
 .hero.split .eyebrow { font: 700 clamp(15px, 1.5vw, 19px)/1 var(--mono); letter-spacing: .28em; text-transform: uppercase;
   color: var(--accent); text-shadow: var(--glow); margin: 0 0 18px; }
