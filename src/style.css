@@ -300,5 +300,5 @@ body { background: transparent; }
 
 /* Name heading with Ben's green handwritten "Ben" in place of the word */
 .hero.hv h1.ben-name { white-space: nowrap; }
-.hero.hv h1.ben-name .ben-word { display: inline-block; height: 1.5em; width: auto; vertical-align: -0.44em; margin: 0 -0.12em 0 -0.22em; border: 0; border-radius: 0; box-shadow: none; background: none; aspect-ratio: auto; object-fit: contain; }
-@media (max-width: 480px) { .hero.hv h1.ben-name { font-size: 10vw; } }
+.hero.hv h1.ben-name .ben-word { display: inline-block; height: 2.8em; width: auto; vertical-align: -0.56em; margin: -0.7em -0.3em -0.3em -0.4em; border: 0; border-radius: 0; box-shadow: none; background: none; aspect-ratio: auto; object-fit: contain; }
+@media (max-width: 480px) { .hero.hv h1.ben-name { font-size: 8.4vw; } }
