@@ -244,13 +244,13 @@ def page(path, p, theme=None):
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
 <header class="site-header">
-  <a class="brand" href="/" aria-label="{SITE}, {t["front"]}"><img src="/brand/stamp.svg" alt="{SITE}" width="56" height="56"></a>
+  <a class="brand" href="/" aria-label="{SITE}, {t["front"]}"><img src="/brand/ben-ring.svg" alt="{SITE}" width="56" height="56"></a>
   <input type="checkbox" id="menu" hidden><label for="menu" class="burger" aria-label="{t["menu"]}">☰</label>
   <nav>{nav}<span class="social">{social}</span><a class="btn" href="{t["book"]}">Book Ben!</a></nav>
 </header>
 <main>{back}{body}</main>
 <footer class="site-footer">
-  <a class="stamp" href="/" aria-label="{SITE}"><img src="/brand/stamp.svg" alt="" width="96" height="96" loading="lazy"></a>
+  <a class="stamp" href="/" aria-label="{SITE}"><img src="/brand/ben-ring.svg" alt="" width="96" height="96" loading="lazy"></a>
   <span class="copy">© Ben David Normann</span>
   <span class="social">{social}</span>
   <a {link_attrs("@CONTACT@")}>{t["contact"]}</a>
