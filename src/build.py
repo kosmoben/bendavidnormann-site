@@ -137,8 +137,11 @@ def hero_variant(v, lang):
     who, book = esc(tr(intro.get("who"), lang)), esc(tr(intro.get("bookable"), lang))
     cta = (f'<p class="hero-cta"><a class="btn" href="{t["book"]}">Book Ben!</a> '
            f'<a class="btn ghost" href="#projects">{t["explore"]}</a></p>')
-    logo = '<img class="hl" src="/brand/logo-arc.svg" alt="" width="560" height="390">'
+    logo = '<img class="hl" src="/brand/ben.svg" alt="Ben" width="742" height="656">'
     if v == "a":
+        name = '<h1 class="ben-name"><img class="ben-word" src="/brand/ben.svg" alt="Ben" width="742" height="656"> David Normann</h1>'
+        inner = f'{name}<p class="who">{who}</p><p class="book">{book}</p>{cta}'
+    elif v == "a2":
         inner = f'{logo}<h1>Ben David Normann</h1><p class="who">{who}</p><p class="book">{book}</p>{cta}'
     elif v == "b":
         inner = (f'<div class="hv-text"><h1>Ben David Normann</h1><p class="who">{who}</p><p class="book">{book}</p>{cta}</div>'
@@ -189,7 +192,7 @@ def render_home(p, lang):
     <p class="lead">{esc(tr(intro.get("lead"), lang))}</p>
     <p class="hero-cta"><a class="btn" href="{t["book"]}">Book Ben!</a> <a class="btn ghost" href="#projects">{t["explore"]}</a></p>
   </div>
-  <div class="hero-logo"><p class="tagline">{esc(tr(intro.get("tagline"), lang))}</p><img src="/brand/logo-arc.svg" alt="Ben David Normann" width="560" height="390"></div>
+  <div class="hero-logo"><p class="tagline">{esc(tr(intro.get("tagline"), lang))}</p><img src="/brand/ben.svg" alt="Ben" width="742" height="656"></div>
   <a class="scroll" href="#about" aria-label="{t["scroll"]}">↓</a>
 </section>
 """

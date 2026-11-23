@@ -280,7 +280,7 @@ body { background: transparent; }
 .hero.hv h1 { font-size: clamp(40px, 6vw, 76px); line-height: 1.02; margin: 0 0 18px; border: 0; color: #f4f7f2; }
 .hero.hv .who { font-size: clamp(19px, 2vw, 24px); color: #e6eee3; margin: 0 0 6px; max-width: none; }
 .hero.hv .book { font: clamp(14px, 1.3vw, 16px)/1.5 var(--mono); color: var(--accent); margin: 0 0 30px; max-width: none; }
-.hero.hv-a .hl { width: min(300px, 70vw); height: auto; margin: 0 0 8px; filter: drop-shadow(0 0 20px rgba(157,255,122,.18)); }
+.hero.hv-a .hl, .hero.hv-a2 .hl { width: min(220px, 55vw); height: auto; margin: 0 0 8px; filter: drop-shadow(0 0 20px rgba(157,255,122,.18)); }
 .hero.hv-b { display: grid !important; grid-template-columns: 1.3fr 1fr !important; gap: 40px; text-align: left; align-items: center; }
 .hero.hv-b .hv-logo { display: flex; justify-content: center; }
 .hero.hv-b .hl { width: min(360px, 100%); height: auto; filter: drop-shadow(0 0 20px rgba(157,255,122,.18)); }
@@ -292,8 +292,13 @@ body { background: transparent; }
   .hero.hv-b .hl { width: min(260px, 70vw); }
   .hero.hv-b .hero-cta .btn { margin: 4px; }
 }
-.hero.hv-a, .hero.hv-c { gap: 0 !important; }
-.hero.hv-a .hl { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; background: none !important; aspect-ratio: auto !important; object-fit: contain; }
+.hero.hv-a, .hero.hv-a2, .hero.hv-c { gap: 0 !important; }
+.hero.hv-a .hl, .hero.hv-a2 .hl { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; background: none !important; aspect-ratio: auto !important; object-fit: contain; }
 
 /* Project title shown as a logo image */
 .project h3 .title-logo { display: block; height: 3.2rem; width: auto; max-width: 100%; margin: 0 0 -.3rem -.15rem; }
+
+/* Name heading with Ben's green handwritten "Ben" in place of the word */
+.hero.hv h1.ben-name { white-space: nowrap; }
+.hero.hv h1.ben-name .ben-word { display: inline-block; height: 1.5em; width: auto; vertical-align: -0.44em; margin: 0 -0.12em 0 -0.22em; border: 0; border-radius: 0; box-shadow: none; background: none; aspect-ratio: auto; object-fit: contain; }
+@media (max-width: 480px) { .hero.hv h1.ben-name { font-size: 10vw; } }
