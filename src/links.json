@@ -82,17 +82,14 @@
       "title_img": "/brand/fysikk-med-ben.svg"
     },
     {
-      "title": {
-        "no": "Kosmologi med Ben",
-        "en": "Cosmology with Ben"
-      },
+      "title": "Kosmologi med Ben",
       "status": {
         "no": "Prisvinnende miniserie",
         "en": "Award-winning mini-series"
       },
       "text": {
         "no": "En miniserie om kosmologi på YouTube, laget sammen med et team fra NTNU.",
-        "en": "A YouTube mini-series on cosmology (in Norwegian), made with a team from NTNU."
+        "en": "A YouTube mini-series on cosmology (in Norwegian; the title means “Cosmology with Ben”), made with a team from NTNU."
       },
       "href": "/video/project-four-l3zw3-wtzbe",
       "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/8c0de4d2-ea26-41cb-b91a-9a388c26ec4b/BenEple.png",
@@ -188,5 +185,5 @@
       "en": "TREFF (UiT)"
     }
   ],
-  "_help_clients": "clients: names shown as 'Oppdragsgivere' under Book me. Plain text, no logos."
+  "_help_clients": "clients: names shown under 'Oppdragsgivere blant annet' / 'Clients include' under Book me. Plain text, no logos."
 }

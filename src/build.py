@@ -13,26 +13,34 @@ ROOT = os.path.dirname(HERE)
 DIST = os.path.join(ROOT, "dist")
 SITE = "Ben David Normann"
 # Contact link: all mail from the site goes to normann.formidling@gmail.com (Ben, 2026-11-21).
-CONTACT = "mailto:normann.formidling@gmail.com?subject=Contact%20from%20bendavidnormann.com"
+CONTACT = "mailto:normann.formidling@gmail.com?subject="
+DOMAIN = {"no": "https://bendavidnormann.no", "en": "https://bendavidnormann.com"}
+LANG = "no"  # language of the page being rendered; set in page()
 # Two languages: Norwegian (default on .no) and English (default on .com).
-# The Worker (worker.js) picks the front page by domain, or by the visitor's own choice (?lang=).
+# Every page is built twice: Norwegian at /<path>, English at /en/<path>. The Worker (worker.js) serves the
+# English copy on bendavidnormann.com and the Norwegian on .no, or the visitor's own choice (?lang=), at the same URL.
+# Text in content.json and links.json is either one string (same in both languages) or {"no": ..., "en": ...}.
 T = {
  "no": {"nav": [("Kosmologi med Ben", "https://filmfreeway.com/projects/4033265"),
                 ("Nyans", "https://www.ntnu.no/nyans"), ("Om meg", "/about")],
-        "book": "/no/book-ben", "book_me": "Book meg", "clients": "Oppdragsgivere blant annet", "projects": "Prosjekter", "follow": "Følg meg",
+        "book": "/book-ben", "book_me": "Book meg", "clients": "Oppdragsgivere blant annet", "projects": "Prosjekter", "follow": "Følg meg",
         "hi": "Hei, jeg er Ben", "more": "Mer om meg →", "explore": "Utforsk", "scroll": "Bla ned",
         "back": "← Tilbake", "contact": "Kontakt", "menu": "Meny", "front": "forsiden",
-        "switch": ("EN", "English", "/?lang=en"),
+        "switch": ("EN", "English"), "video": "YouTube-video", "subject": "Kontakt fra bendavidnormann.no",
+        "nf_title": "Fant ikke siden", "nf_html": "<h1>Fant ikke siden</h1><p>Beklager, den siden finnes ikke.</p>",
+        "nf_button": "Gå til forsiden",
         "desc": "Ben David Normann: kosmolog, fysiker, foredragsholder og konferansier. "
                 "Kosmologi, fysikk og matematikk ved NTNU i Ålesund."},
- "en": {"nav": [("Cosmology-with-Ben", "https://filmfreeway.com/projects/4033265"),
+ "en": {"nav": [("Kosmologi med Ben", "https://filmfreeway.com/projects/4033265"),
                 ("Nyans", "https://www.ntnu.no/nyans"), ("About", "/about")],
         "book": "/book-ben", "book_me": "Book me", "clients": "Clients include", "projects": "Projects", "follow": "Follow",
         "hi": "Hi, I'm Ben", "more": "More about me →", "explore": "Explore", "scroll": "Scroll down",
         "back": "← Back", "contact": "Contact", "menu": "Menu", "front": "front page",
-        "switch": ("NO", "Norsk", "/?lang=no"),
-        "desc": "Ben David Normann: presenter, academic, teacher and author. "
-                "Cosmology, physics and mathematics at NTNU Ålesund."},
+        "switch": ("NO", "Norsk"), "video": "YouTube video", "subject": "Contact from bendavidnormann.com",
+        "nf_title": "Page not found", "nf_html": "<h1>Page not found</h1><p>Sorry, that page does not exist.</p>",
+        "nf_button": "Go to the front page",
+        "desc": "Ben David Normann: cosmologist, physicist, speaker and conference host. "
+                "Cosmology, physics and mathematics at NTNU in Ålesund."},
 }
 FLAGS = {
  # Small inline flags for the language switch.
@@ -86,12 +94,13 @@ def esc(s):
 
 
 def link_attrs(href):
-    href = CONTACT if href == "@CONTACT@" else href
+    href = CONTACT + urllib.parse.quote(T[LANG]["subject"]) if href == "@CONTACT@" else href
     ext = href.startswith("http")
     return f'href="{esc(href)}"' + (' target="_blank" rel="noopener"' if ext else "")
 
 
 def figure(src, alt="", cap=None, href=None, cls=""):
+    alt, cap = tr(alt, LANG), tr(cap, LANG)
     inner = f'<img src="{img(src)}" alt="{esc(alt or cap)}" loading="lazy">'
     if href:
         inner = f"<a {link_attrs(href)}>{inner}</a>"
@@ -100,6 +109,7 @@ def figure(src, alt="", cap=None, href=None, cls=""):
 
 
 def tile(i):
+    i = {k: tr(v, LANG) if k == "cap" else v for k, v in i.items()}
     if i.get("href"):
         return (f'<a class="tile" {link_attrs(i["href"])}><img src="{img(i["img"])}" alt="{esc(i.get("cap"))}" '
                 f'loading="lazy"><span>{esc(i.get("cap"))}</span></a>')
@@ -107,20 +117,21 @@ def tile(i):
 
 
 def render_block(b):
+    b = {k: tr(v, LANG) if k in ("html", "button") else v for k, v in b.items()}
     if "html" in b:
         return f'<div class="prose">{b["html"]}</div>'
     if "youtube" in b:
         v = esc(b["youtube"])
         return (f'<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{v}" '
-                'title="YouTube video" loading="lazy" allowfullscreen '
+                'title="{T[LANG]["video"]}" loading="lazy" allowfullscreen '
                 'allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"></iframe></div>')
     if "button" in b:
         return f'<p class="btn-row"><a class="btn" {link_attrs(b["href"])}>{esc(b["button"])}</a></p>'
     if "grid" in b:
         return '<div class="grid">' + "".join(tile(i) for i in b["grid"]) + "</div>"
     if "cards" in b:
-        out = [f'<div class="card"><h3>{esc(c["title"])}</h3>'
-               f'{figure(c["img"], c.get("alt"), None, c.get("href"))}<p>{esc(c["text"])}</p></div>'
+        out = [f'<div class="card"><h3>{esc(tr(c["title"], LANG))}</h3>'
+               f'{figure(c["img"], c.get("alt"), None, c.get("href"))}<p>{esc(tr(c["text"], LANG))}</p></div>'
                for c in b["cards"]]
         return f'<div class="cards">{"".join(out)}</div>'
     if "gallery" in b:
@@ -206,23 +217,23 @@ def render_home(p, lang):
 <section class="band"><h2><span class="spark">✦</span> {t["follow"]}</h2><div class="chans">{chans}</div></section>"""
 
 
-def page(path, p, theme=None):
-    lang = p.get("lang", "en")
+def page(path, p, lang, theme=None):
+    global LANG
+    LANG = lang
     t = T[lang]
     home = p.get("kind") == "home"
-    title = SITE if home else f'{p["title"]} — {SITE}'
+    title = SITE if home else f'{tr(p["title"], lang)} — {SITE}'
     nav = "".join(
         f'<a {link_attrs(h)}' + (' aria-current="page"' if h == path or (h == "/" and home) else "")
         + f'>{esc(label)}</a>' for label, h in t["nav"])
-    code, name, href = t["switch"]
-    if path in ("/book-ben", "/no/book-ben"):
-        href = T["en" if lang == "no" else "no"]["book"]
+    code, name = t["switch"]
+    href = f"{path}?lang={code.lower()}"
     nav += (f'<a class="lang" href="{href}" hreflang="{code.lower()}" lang="{code.lower()}" title="{name}" '
             f'aria-label="{name}">{FLAGS[code.lower()]}</a>')
     stamp = tr(LINKS.get("stamp"), lang)
     stamp_html = f'<div class="stamp-overlay" aria-hidden="true"><span>{esc(stamp)}</span></div>' if stamp else ""
     social = "".join(
-        f'<a href="{h}" target="_blank" rel="noopener" aria-label="{t}">{ICONS[k]}</a>' for t, h, k in SOCIAL)
+        f'<a href="{h}" target="_blank" rel="noopener" aria-label="{n}">{ICONS[k]}</a>' for n, h, k in SOCIAL)
     body = render_home(p, lang) if home else "".join(render_block(b) for b in p["blocks"])
     theme_css = (f'\n<link rel="stylesheet" href="/themes/{theme}.css"><meta name="robots" content="noindex">'
                  if theme else "")
@@ -233,13 +244,14 @@ def page(path, p, theme=None):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
-<meta name="description" content="{esc(t["desc"])}">
+<meta name="description" content="{esc(t["desc"])}">{alternates(path)}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/brand/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png">
 <meta name="theme-color" content="#050505">
 <meta property="og:title" content="{esc(title)}">
-<meta property="og:image" content="/brand/share.png">
+<meta property="og:image" content="{DOMAIN[lang]}/brand/share.png">
+<meta property="og:locale" content="{"nb_NO" if lang == "no" else "en_GB"}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">{theme_css}
@@ -265,6 +277,15 @@ def page(path, p, theme=None):
 """
 
 
+def alternates(path):
+    """Same URL on both domains: .no is Norwegian, .com is English."""
+    if path == "/404":
+        return ""
+    return (f'\n<link rel="canonical" href="{DOMAIN[LANG]}{path}">'
+            + "".join(f'\n<link rel="alternate" hreflang="{"nb" if l == "no" else l}" href="{DOMAIN[l]}{path}">' for l in DOMAIN)
+            + f'\n<link rel="alternate" hreflang="x-default" href="{DOMAIN["en"]}{path}">')
+
+
 def write(path, text):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
@@ -280,20 +301,20 @@ def main():
                 q = os.path.join(DIST, n)
                 shutil.rmtree(q) if os.path.isdir(q) else os.remove(q)
     for path, p in content.items():
-        out = os.path.join(DIST, path.strip("/"), "index.html") if path != "/" else os.path.join(DIST, "index.html")
-        write(out, page(path, p))
-        if path == "/":
-            write(os.path.join(DIST, "no", "index.html"), page(path, p))
+        for lang, prefix in (("no", ""), ("en", "en")):
+            out = os.path.join(DIST, prefix, path.strip("/"), "index.html")
+            write(out, page(path, p, lang))
     # Design proposals: the front page with an alternative theme stylesheet.
     themes_dir = os.path.join(HERE, "themes")
     if os.path.isdir(themes_dir):
         shutil.copytree(themes_dir, os.path.join(DIST, "themes"), dirs_exist_ok=True)
         for f in sorted(os.listdir(themes_dir)):
             name = os.path.splitext(f)[0]
-            write(os.path.join(DIST, f"design-{name}", "index.html"), page("/", content["/"], theme=name))
-    write(os.path.join(DIST, "404.html"), page("/404", {"title": "Not found", "blocks": [
-        {"html": "<h1>Page not found</h1><p>Sorry, that page does not exist.</p>"},
-        {"button": "Go to the front page", "href": "/"}]}))
+            write(os.path.join(DIST, f"design-{name}", "index.html"), page("/", content["/"], "no", theme=name))
+    for lang, prefix in (("no", ""), ("en", "en")):
+        t = T[lang]
+        write(os.path.join(DIST, prefix, "404.html"), page("/404", {"title": t["nf_title"], "blocks": [
+            {"html": t["nf_html"]}, {"button": t["nf_button"], "href": "/"}]}, lang))
     for f in ("style.css", "sky.js", "favicon.svg", "_redirects", "_headers"):
         shutil.copy(os.path.join(HERE, f), os.path.join(DIST, f))
     shutil.copytree(os.path.join(HERE, "brand"), os.path.join(DIST, "brand"), dirs_exist_ok=True)
