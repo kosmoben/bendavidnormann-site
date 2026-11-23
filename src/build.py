@@ -159,11 +159,13 @@ def render_home(p, lang):
     for pr in LINKS["projects"]:
         pic = f'<img src="{img(pr["img"])}" alt="" loading="lazy">' if pr.get("img") else ""
         extra = pr.get("extra")
+        title_html = (f'<img class="title-logo" src="{pr["title_img"]}" alt="{esc(tr(pr["title"], lang))}">'
+                      if pr.get("title_img") else esc(tr(pr["title"], lang)))
         extra_html = f'<a class="more" {link_attrs(extra["href"])}>{esc(tr(extra["label"], lang))} →</a>' if extra else ""
         projects.append(
             f'<article class="project"><a class="cover" {link_attrs(pr["href"])} tabindex="-1">{pic}</a>'
             f'<div class="body"><p class="status">{esc(tr(pr.get("status"), lang))}</p>'
-            f'<h3><a {link_attrs(pr["href"])}>{esc(tr(pr["title"], lang))}</a></h3>'
+            f'<h3><a {link_attrs(pr["href"])}>{title_html}</a></h3>'
             f'<p>{esc(tr(pr.get("text"), lang))}</p>{extra_html}</div></article>')
     booking = ""
     clients = ""

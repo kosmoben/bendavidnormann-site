@@ -65,7 +65,7 @@
   ],
   "projects": [
     {
-      "title": "Fysikkhjelp",
+      "title": "Fysikk med Ben",
       "status": {
         "no": "Læringsvideoer og -materiell",
         "en": "Learning videos and material"
@@ -82,7 +82,8 @@
           "en": "Videos on YouTube"
         },
         "href": "https://www.youtube.com/@DrNormann"
-      }
+      },
+      "title_img": "/brand/fysikk-med-ben.svg"
     },
     {
       "title": {

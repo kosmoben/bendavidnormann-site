@@ -294,3 +294,6 @@ body { background: transparent; }
 }
 .hero.hv-a, .hero.hv-c { gap: 0 !important; }
 .hero.hv-a .hl { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; background: none !important; aspect-ratio: auto !important; object-fit: contain; }
+
+/* Project title shown as a logo image */
+.project h3 .title-logo { display: block; height: 3.2rem; width: auto; max-width: 100%; margin: 0 0 -.3rem -.15rem; }
