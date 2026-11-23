@@ -1,9 +1,5 @@
 {
   "_help": "Edit this file to change the hub on the front page. A channel with an empty url is hidden. icon: yt, tt, ig, fb, in, x, link. Text can be one string (same in both languages) or {\"no\": ..., \"en\": ...}.",
-  "stamp": {
-    "no": "Under ombygging",
-    "en": "Under construction"
-  },
   "intro": {
     "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/1671008911780-ARGYP729CEI6H0DXEQTB/bendavid_2214-Edit_1600px.jpg",
     "text": {
