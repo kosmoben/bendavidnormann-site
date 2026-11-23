@@ -144,7 +144,7 @@ def hero_variant(v, lang):
     elif v == "a3":
         name = '<h1 class="ben-name"><img class="ben-word" src="/brand/ben.svg" alt="Ben" width="742" height="656"> David Normann</h1>'
         inner = (f'<div class="hv-row"><div class="hv-text">{name}<p class="who">{who}</p><p class="book">{book}</p>{cta}</div>'
-                 f'<img class="scene-photo" src="/brand/ben-scene.png" alt="Ben David Normann på scenen" width="718" height="470"></div>')
+                 f'<img class="scene-photo" src="/brand/ben-scene.png" alt="{"Ben David Normann on stage" if lang == "en" else "Ben David Normann på scenen"}" width="718" height="470"></div>')
     elif v == "a2":
         inner = f'{logo}<h1>Ben David Normann</h1><p class="who">{who}</p><p class="book">{book}</p>{cta}'
     elif v == "b":
