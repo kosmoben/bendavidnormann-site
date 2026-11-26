@@ -251,19 +251,17 @@
    },
    {
     "button": "Episode 4",
-    "href": "https://www.youtube.com/watch?v=BVGFHxJ4W0k&list=PLBSPq-MdQqruePsVOiloN1on1LH684i48",
-    "alt": "Nyans"
+    "href": "https://www.youtube.com/watch?v=BVGFHxJ4W0k&list=PLBSPq-MdQqruePsVOiloN1on1LH684i48"
    },
    {
     "img": "https://images.squarespace-cdn.com/content/v1/609cc52b381d020cf2865d46/f0a20fea-46ec-4605-813c-ff79b1284bd5/MicrosoftTeams-image+%284%29.png",
-    "alt": "Nyans",
+    "alt": "Nyans"
+   },
+   {
     "html": {
      "no": "<h2>Resten av episodene</h2><p>Besøk gjerne prosjektsiden hos NTNU eller YouTube-kanalen min for å se de andre episodene.</p>",
      "en": "<h2>The rest of the episodes</h2><p>Feel free to visit the project page at NTNU or my YouTube channel to watch the other episodes.</p>"
     }
-   },
-   {
-    "html": "<h2>The rest of the episodes</h2><p>Feel free to visit the project webpage at NTNU or my YouTube channel to watch the other episodes.</p>"
    },
    {
     "button": "www.ntnu.no/nyans",
