@@ -2,7 +2,7 @@
 
 Static personal website for Ben David Normann, served by Cloudflare Workers (static assets).
 
-- `src/content.json`: text and images for every page (same URLs as the old Squarespace site).
+- `src/content.json`: text and images for every page (same URLs as the old Squarespace site). Text is either one string or `{"no": ..., "en": ...}`; every page is built in Norwegian (`/<path>`) and English (`/en/<path>`), and `src/worker.js` serves English on bendavidnormann.com and Norwegian on bendavidnormann.no at the same address (`?lang=en`/`?lang=no` switches).
 - `src/links.json`: the front-page hub, meaning channels (YouTube, TikTok, Instagram, ...) and projects. A channel with an empty `url` is hidden.
 - `src/style.css`, `src/favicon.svg`, `src/_redirects`, `src/_headers`: assets copied into the build.
 - `src/img/`: self-hosted images (optional; missing ones are fetched from the old Squarespace CDN with `--fetch-images`).

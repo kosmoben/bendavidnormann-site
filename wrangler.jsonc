@@ -1,6 +1,6 @@
 {
   // Static site for bendavidnormann.com and bendavidnormann.no, served by Cloudflare Workers static assets.
-  // worker.js only runs for the front page ("/"), to choose Norwegian or English.
+  // worker.js runs for the pages (not images, styles or /en/...), to choose Norwegian or English.
   "name": "bendavidnormann",
   "main": "src/worker.js",
   "compatibility_date": "2026-11-01",
@@ -9,7 +9,7 @@
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/"]
+    "run_worker_first": ["/*", "!/img/*", "!/brand/*", "!/themes/*", "!/en/*", "!/style.css", "!/sky.js", "!/favicon.svg"]
   },
   "workers_dev": true,
   // Cloudflare creates the DNS records for these itself on deploy.
