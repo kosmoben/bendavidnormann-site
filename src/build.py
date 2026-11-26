@@ -22,7 +22,7 @@ LANG = "no"  # language of the page being rendered; set in page()
 # Text in content.json and links.json is either one string (same in both languages) or {"no": ..., "en": ...}.
 T = {
  "no": {"nav": [("Kosmologi med Ben", "https://filmfreeway.com/projects/4033265"),
-                ("Nyans", "https://www.ntnu.no/nyans"), ("Om meg", "/about")],
+("Om meg", "/about")],
         "book": "/book-ben", "book_me": "Book meg", "clients": "Oppdragsgivere blant annet", "projects": "Prosjekter", "follow": "Følg meg",
         "hi": "Hei, jeg er Ben", "more": "Mer om meg →", "explore": "Utforsk", "scroll": "Bla ned",
         "back": "← Tilbake", "contact": "Kontakt", "menu": "Meny", "front": "forsiden",
@@ -32,7 +32,7 @@ T = {
         "desc": "Ben David Normann: kosmolog, fysiker, foredragsholder og konferansier. "
                 "Kosmologi, fysikk og matematikk ved NTNU i Ålesund."},
  "en": {"nav": [("Kosmologi med Ben", "https://filmfreeway.com/projects/4033265"),
-                ("Nyans", "https://www.ntnu.no/nyans"), ("About", "/about")],
+("About", "/about")],
         "book": "/book-ben", "book_me": "Book me", "clients": "Clients include", "projects": "Projects", "follow": "Follow",
         "hi": "Hi, I'm Ben", "more": "More about me →", "explore": "Explore", "scroll": "Scroll down",
         "back": "← Back", "contact": "Contact", "menu": "Menu", "front": "front page",
